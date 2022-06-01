@@ -1,21 +1,19 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-
 export default function NavBar() {
   const [animateHeader, setAnimateHeader] = useState(false);
   useEffect(() => {
     const listener = () => {
-     if (window.scrollY > 140) {
-       setAnimateHeader(true);
-     } else setAnimateHeader(false);
+      if (window.scrollY > 140) {
+        setAnimateHeader(true);
+      } else setAnimateHeader(false);
     };
     window.addEventListener("scroll", listener);
     return () => {
       window.removeEventListener("scroll", listener);
     };
   }, []);
- 
 
   const menuItems = [
     { title: "Work", url: "#" },
@@ -24,12 +22,13 @@ export default function NavBar() {
   ];
 
   return (
-    <header className={`w-full top-0 backdrop-filter backdrop-blur-lg fixed z-10 trasition ease-in-out duration-500 ${
-      animateHeader && "shadow-xl bg-black/30"
-    }`}
-  >
+    <header
+      className={`w-full top-0 backdrop-filter backdrop-blur-lg fixed z-10 trasition ease-in-out duration-500 ${
+        animateHeader && "shadow-xl bg-black/30"
+      }`}
+    >
       <div className="max-w-7xl mx-auto ">
-      <div
+        <div
           className={`flex max-w-screen-xl py-10 ${
             animateHeader && "py-4"
           } mx-auto items-center justify-between px-8 trasition ease-in-out duration-500`}
