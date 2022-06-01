@@ -45,24 +45,6 @@ function Hero() {
           </div>
         </div>
       </section>
-
-      {/* <section>
-        <div className="ml-32 mt-[20rem] text-white">
-          <div>
-            <h1 className="text-8xl font-semibold">
-              We are a{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-violet-400 to-violet-900">
-                Web3
-              </span>
-              <br />
-              Product Studio
-            </h1>
-            <h2 className="mt-12 text-2xl">
-              We help you bring your new web3 product ideas to reality.
-            </h2>
-          </div>
-        </div>
-      </section> */}
     </Fragment>
   );
 }

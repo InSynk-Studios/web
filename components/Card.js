@@ -1,12 +1,12 @@
 import { Fragment } from "react";
-import { Svg1, Svg2, Svg3, Svg4 } from "./SVG/SVGs";
+import { Scoping, Ux, Mvp, Engineering } from "./SVG/SVGs";
 
 const CardColors = ["#cf9c3e", "#cf9c3e", "#cf9c3e", "#9067D4"];
 
 const contents = [
   {
     id: 1,
-    svg: <Svg1 />,
+    svg: <Scoping />,
     number: "01.",
     color: CardColors[0],
     title: "Product Scoping",
@@ -14,7 +14,7 @@ const contents = [
   },
   {
     id: 2,
-    svg: <Svg2 />,
+    svg: <Ux />,
     number: "02.",
     color: CardColors[1],
     title: "Ux/UI",
@@ -22,7 +22,7 @@ const contents = [
   },
   {
     id: 3,
-    svg: <Svg3 />,
+    svg: <Mvp />,
     number: "03.",
     color: CardColors[2],
     title: "MVP Development",
@@ -30,7 +30,7 @@ const contents = [
   },
   {
     id: 4,
-    svg: <Svg4 />,
+    svg: <Engineering />,
     number: "04.",
     color: CardColors[3],
     title: "Engineering Partnership",
