@@ -1,12 +1,12 @@
 import { Fragment } from "react";
-import { Scoping, Ux, Mvp, Engineering } from "./SVG/SVGs";
+import { Svg1, Svg2, Svg3, Svg4 } from "./svg/SVGs";
 
-const CardColors = ["#cf9c3e", "#cf9c3e", "#cf9c3e", "#9067D4"];
+const CardColors = ["#6BA8E0", "red", "#cf9c3e", "#9067D4"];
 
 const contents = [
   {
     id: 1,
-    svg: <Scoping />,
+    svg: <Svg1 />,
     number: "01.",
     color: CardColors[0],
     title: "Product Scoping",
@@ -14,7 +14,7 @@ const contents = [
   },
   {
     id: 2,
-    svg: <Ux />,
+    svg: <Svg2 />,
     number: "02.",
     color: CardColors[1],
     title: "Ux/UI",
@@ -22,7 +22,7 @@ const contents = [
   },
   {
     id: 3,
-    svg: <Mvp />,
+    svg: <Svg3 />,
     number: "03.",
     color: CardColors[2],
     title: "MVP Development",
@@ -30,7 +30,7 @@ const contents = [
   },
   {
     id: 4,
-    svg: <Engineering />,
+    svg: <Svg4 />,
     number: "04.",
     color: CardColors[3],
     title: "Engineering Partnership",
@@ -41,7 +41,7 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative group overflow-hidden p-6 w-[20rem] h-[28rem] rounded-3xl cursor-pointer bg-[${props.content.color}]`}
+      className={`relative group overflow-hidden p-6 w-[20rem] h-[28rem] rounded-3xl cursor-pointer bg-blue-100`}
     >
       <div className="mb-5">{props.content.svg}</div>
 
@@ -53,7 +53,7 @@ const CardListItem = (props) => {
 
           <div className="divide-y-2 divide-black ">
             <div className="absolute flex m-12 -ml-1 -mt-1">
-              <p className="capitalize font-bold text-4xl text-left text-black">
+              <p className="font-semibold text-4xl text-left text-black">
                 {props.content.title}
               </p>
             </div>
@@ -64,7 +64,7 @@ const CardListItem = (props) => {
             </div>
           </div>
 
-          <div className="pl-[12rem] mt-2">
+          <div className="pl-[14rem] mt-2">
             <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
           </div>
         </div>
@@ -80,7 +80,7 @@ const Card = () => {
         <h1 className="text-6xl font-semibold">See how can we help you</h1>
         <br />
         <p className="text-xl text-gray-400">Let{"'"}s keep it simple.</p>
-        <p className="text-xl pt-4">
+        <p className="text-xl pt-4 font-normal">
           We help you build your Minimum Viable Product or UX/UI
           <br />
           or with the further development of your product.
