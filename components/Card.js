@@ -41,29 +41,33 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative group overflow-hidden p-6 w-[20rem] h-[28rem] rounded-3xl cursor-pointer bg-[${props.content.color}]`}>
+      className={`relative group overflow-hidden p-6 w-[20rem] h-[28rem] rounded-3xl cursor-pointer bg-[${props.content.color}]`}
+    >
       <div className="mb-5">{props.content.svg}</div>
 
       <div className=" mt-36">
-  <div className="object-cover w-full h-full transform duration-700 backdrop-opacity-100"  />
-  <div className="absolute w-full h-full shadow-2xl opacity-20 transform duration-500 inset-y-full group-hover:-inset-y-0"></div>
-  <div className="absolute w-full h-full transform duration-500 inset-y-[10rem] group-hover:-inset-y-0">
-  <p className="text-black text-xl mt-32">{props.content.number}</p>
+        <div className="object-cover w-full h-full transform duration-700 backdrop-opacity-100" />
+        <div className="absolute w-full h-full shadow-2xl opacity-20 transform duration-500 inset-y-full group-hover:-inset-y-0"></div>
+        <div className="absolute w-full h-full transform duration-500 inset-y-[10rem] group-hover:-inset-y-0">
+          <p className="text-black text-xl mt-32">{props.content.number}</p>
 
-<div className="divide-y-2 divide-black ">
-    <div className="absolute flex m-12 -ml-1 -mt-1">
-    <p className="capitalize font-bold text-4xl text-left text-black">{props.content.title}</p>
-    </div>
-    <div className="absolute mt-[10rem] p-5">
-      <p className="font-sans text-left w-4/5 text-black">{props.content.para}</p>
-    </div>
-    </div>
+          <div className="divide-y-2 divide-black ">
+            <div className="absolute flex m-12 -ml-1 -mt-1">
+              <p className="capitalize font-bold text-4xl text-left text-black">
+                {props.content.title}
+              </p>
+            </div>
+            <div className="absolute mt-[10rem] p-5">
+              <p className="font-sans text-left w-4/5 text-black">
+                {props.content.para}
+              </p>
+            </div>
+          </div>
 
-    <div className="pl-[12rem] mt-2">
-    <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png"/>
-
-    </div>
-      </div>
+          <div className="pl-[12rem] mt-2">
+            <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -91,9 +95,9 @@ const Card = () => {
         <p className="text-xl pt-4">
           You can let us help you with all of the above mentioned services
           <br />
-          and you can call us your &rdquo;Design {"&"} Development Partner&rdquo;
+          and you can call us your &rdquo;Design {"&"} Development
+          Partner&rdquo;
         </p>
-
       </div>
     </Fragment>
   );

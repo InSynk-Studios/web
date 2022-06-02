@@ -40,7 +40,7 @@ function Hero() {
               Product Studio
             </h1>
             <p className="mb-8 leading-relaxed text-2xl">
-            We help you bring your new web3 product ideas to reality.
+              We help you bring your new web3 product ideas to reality.
             </p>
           </div>
         </div>
