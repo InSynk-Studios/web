@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
 
-const CardColors = ["#6BA8E0", "red", "#cf9c3e", "#9067D4"];
+const CardColors = ["#6BA8E0", "red-100", "#cf9c3e", "#9067D4"];
 
 const contents = [
   {
@@ -41,7 +41,7 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative group overflow-hidden p-6 w-[20rem] h-[28rem] rounded-3xl cursor-pointer bg-blue-100`}
+      className={`relative group overflow-hidden p-6 w-[20rem] h-[28rem] rounded-3xl cursor-pointer bg-${props.content.color}`}
     >
       <div className="mb-5">{props.content.svg}</div>
 
