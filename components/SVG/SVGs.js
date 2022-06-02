@@ -1,4 +1,4 @@
-export function Svg1() {
+export function Scoping() {
   return (
     <svg
       className="hi-outline hi-template inline-block w-12 h-12 text-black"
@@ -17,7 +17,7 @@ export function Svg1() {
   );
 }
 
-export function Svg2() {
+export function Ux() {
   return (
     <svg
       className="hi-outline hi-sparkles inline-block w-12 h-12 text-black"
@@ -36,7 +36,7 @@ export function Svg2() {
   );
 }
 
-export function Svg3() {
+export function Mvp() {
   return (
     <svg
       className="hi-outline hi-cog inline-block w-12 h-12 text-black"
@@ -60,7 +60,7 @@ export function Svg3() {
     </svg>
   );
 }
-export function Svg4() {
+export function Engineering() {
   return (
     <svg
       className="hi-outline hi-cube inline-block w-12 h-12 text-black"
