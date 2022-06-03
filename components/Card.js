@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
 
-const CardColors = ["#6BA8E0", "red-100", "#cf9c3e", "#9067D4"];
+const CardColors = ["white", "white", "white", "white"];
 
 const contents = [
   {
@@ -41,32 +41,26 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative group overflow-hidden p-6 w-[20rem] h-[28rem] rounded-3xl cursor-pointer bg-${props.content.color}`}
+      className={`relative group overflow-hidden lg:p-6 h-80 lg:h-6/6 rounded-3xl cursor-pointer bg-${props.content.color}`}
     >
       <div className="mb-5">{props.content.svg}</div>
 
-      <div className=" mt-36">
-        <div className="object-cover w-full h-full transform duration-700 backdrop-opacity-100" />
-        <div className="absolute w-full h-full shadow-2xl opacity-20 transform duration-500 inset-y-full group-hover:-inset-y-0"></div>
-        <div className="absolute w-full h-full transform duration-500 inset-y-[10rem] group-hover:-inset-y-0">
-          <p className="text-black text-xl mt-32">{props.content.number}</p>
+      <div className="absolute transform duration-500 inset-y-40 group-hover:-inset-y-0">
+        <p className="text-black text-xl mt-32">{props.content.number}</p>
 
-          <div className="divide-y-2 divide-black ">
-            <div className="absolute flex m-12 -ml-1 -mt-1">
-              <p className="font-semibold text-4xl text-left text-black">
-                {props.content.title}
-              </p>
-            </div>
-            <div className="absolute mt-[10rem] p-5">
-              <p className="font-sans text-left w-4/5 text-black">
-                {props.content.para}
-              </p>
-            </div>
+        <div className="divide-y-2 divide-black">
+          <div className="absolute flex m-12 -ml-1 -mt-1">
+            <p className="font-semibold text-xl sm:text-4xl text-left text-black">
+              {props.content.title}
+            </p>
           </div>
+          <div className="absolute mt-40 pt-5">
+            <p className="text-left text-black">{props.content.para}</p>
+          </div>
+        </div>
 
-          <div className="pl-[14rem] mt-2">
-            <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
-          </div>
+        <div className=" pl-56 mt-2">
+          <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
         </div>
       </div>
     </div>
@@ -76,23 +70,29 @@ const CardListItem = (props) => {
 const Card = () => {
   return (
     <Fragment>
-      <div className="container mx-auto px-24 text-white">
-        <h1 className="text-6xl font-semibold">See how can we help you</h1>
+      <div className="font-inter-400 mx-auto px-9 lg:px-24 -mt-32 lg:-mt-0 text-white">
+        <h1 className="text-4xl sm:text-6xl font-semibold">
+          See how can we help you
+        </h1>
         <br />
-        <p className="text-xl text-gray-400">Let{"'"}s keep it simple.</p>
-        <p className="text-xl pt-4 font-normal">
+        <p className="text-lg sm:text-xl font-normal text-gray-400">
+          Let&rsquo;s keep it simple.
+        </p>
+        <p className="text-lg sm:text-xl pt-4 font-normal">
           We help you build your Minimum Viable Product or UX/UI
           <br />
           or with the further development of your product.
         </p>
 
-        <div className="grid grid-cols-1 gap-[1rem] md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
           {contents.map((content) => {
             return <CardListItem content={content} key={content.id} />;
           })}
         </div>
-        <p className="text-xl -mt-12 text-gray-400">Or,</p>
-        <p className="text-xl pt-4">
+        <p className="text-md sm:text-xl font-normal lg:-mt-10 text-gray-400">
+          Or,
+        </p>
+        <p className="text-md sm:text-xl font-normal pt-4">
           You can let us help you with all of the above mentioned services
           <br />
           and you can call us your &rdquo;Design {"&"} Development

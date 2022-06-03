@@ -1,10 +1,14 @@
 import { Fragment } from "react";
 
 function Form() {
+  const preventClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <Fragment>
       <section
-        className="py-20 px-4 lg:px-24 overflow-hidden relative z-10"
+        className="py-16 px-4 lg:px-24 overflow-hidden relative z-10 font-inter-400"
         data-aos="fade-up"
         id="contact"
       >
@@ -111,8 +115,9 @@ function Form() {
                             transition
                             ease-in-out
                             duration-500
-                            hover:bg-violet-400
+                            hover:bg-gray-400
                             "
+                      onClick={preventClick}
                     >
                       Send Message
                     </button>

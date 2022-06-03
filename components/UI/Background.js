@@ -18,11 +18,11 @@ function Background(props) {
   return (
     <Fragment>
       <div
-        className={`absolute bottom-12 left-[80rem] w-[40rem] h-[40rem] bg-circle rounded-full filter blur-2xl opacity-75 animation-delay-1000 ${
+        className={`absolute bottom-5 lg:bottom-12 lg:left-3/4 w-40 h-40 lg:w-12/12 lg:h-8/8 bg-circle rounded-full filter blur-xl opacity-75 animation-delay-1000 ${
           animateBackground && "animate-blob"
         }`}
       ></div>
-      <section>{props.children}</section>
+      <section className="container">{props.children}</section>
     </Fragment>
   );
 }

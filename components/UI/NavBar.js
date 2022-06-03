@@ -24,7 +24,7 @@ export default function NavBar() {
   return (
     <header
       className={`w-full top-0 backdrop-filter backdrop-blur-lg fixed z-10 trasition ease-in-out duration-500 ${
-        animateHeader && "shadow-xl bg-black/30"
+        animateHeader && "shadow-xl bg-white/30 lg:bg-black/30"
       }`}
     >
       <div className="max-w-7xl mx-auto ">
