@@ -24,10 +24,10 @@ export default function NavBar() {
   return (
     <header
       className={`w-full top-0 backdrop-filter backdrop-blur-lg fixed z-10 trasition ease-in-out duration-500 ${
-        animateHeader && "shadow-xl bg-white/30 lg:bg-black/30"
+        animateHeader && "bg-white/30 lg:bg-black/30"
       }`}
     >
-      <div className="max-w-7xl mx-auto ">
+      <div className="max-w-7xl mx-auto">
         <div
           className={`flex max-w-screen-xl py-10 ${
             animateHeader && "py-4"

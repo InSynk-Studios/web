@@ -1,7 +1,7 @@
 function Client() {
   return (
-    <section className="text-white">
-      <div className="max-w-screen-xl px-4 py-32 mx-auto sm:px-6 lg:px-8 sm:py-40">
+    <section className="my-40 text-white">
+      <div className="max-w-screen-xl mx-auto">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-4xl font-inter-400 font-semibold tracking-tight sm:text-5xl">
             Our clients love us

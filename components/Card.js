@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
 
+// Card background colors
 const CardColors = ["white", "white", "white", "white"];
 
 const contents = [
@@ -60,6 +61,7 @@ const CardListItem = (props) => {
         </div>
 
         <div className=" pl-56 mt-2">
+          {/* Right arrow icon */}
           <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
         </div>
       </div>
@@ -70,7 +72,7 @@ const CardListItem = (props) => {
 const Card = () => {
   return (
     <Fragment>
-      <div className="font-inter-400 mx-auto px-9 lg:px-24 -mt-32 lg:-mt-0 text-white">
+      <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
         <h1 className="text-4xl sm:text-6xl font-semibold">
           See how can we help you
         </h1>
@@ -98,7 +100,7 @@ const Card = () => {
           and you can call us your &rdquo;Design {"&"} Development
           Partner&rdquo;
         </p>
-      </div>
+      </section>
     </Fragment>
   );
 };

@@ -7,19 +7,11 @@ import Background from "../components/ui/Background";
 export default function Home() {
   return (
     <Background>
-      <main>
-        <Hero />
-      </main>
-      <div className="relative top-[25rem]">
-        <div>
-          <Card />
-        </div>
-        <div>
-          <Client />
-        </div>
-        <div className="top-[25rem]">
-          <Form />
-        </div>
+      <Hero />
+      <div className="relative top-96">
+        <Card />
+        <Client />
+        <Form />
       </div>
     </Background>
   );

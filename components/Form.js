@@ -8,7 +8,7 @@ function Form() {
   return (
     <Fragment>
       <section
-        className="py-16 px-4 lg:px-24 overflow-hidden relative z-10 font-inter-400"
+        className="overflow-hidden relative z-10 font-inter-400"
         data-aos="fade-up"
         id="contact"
       >
