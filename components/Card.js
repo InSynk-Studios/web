@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
 
 // Card background colors
-const CardColors = ["white", "white", "white", "white"];
+const CardColors = ["bg-customBlue", "bg-white", "bg-customOrange", "bg-customPurple"];
 
 const contents = [
   {
@@ -42,7 +42,7 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative group overflow-hidden p-5 h-80 w-40 lg:w-12/12 lg:h-6/6 rounded-3xl cursor-pointer bg-${props.content.color}`}
+      className={`relative group overflow-hidden p-5 h-80 w-40 lg:w-12/12 lg:h-6/6 rounded-3xl cursor-pointer ${props.content.color}`}
     >
       <div className="w-fit">{props.content.svg}</div>
 

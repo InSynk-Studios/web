@@ -2,7 +2,6 @@ export function Scoping() {
   return (
     <svg
       className="inline-block w-10 h-10 lg:w-14 lg:h-14"
-      stroke="currentColor"
       fill="none"
       viewBox="0 0 52 52"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,8 +17,7 @@ export function Scoping() {
 export function Ux() {
   return (
     <svg
-      className="inline-block w-10 h-10 lg:w-14 lg:h-14"
-      stroke="currentColor"
+      className="inline-block w-10 h-10 lg:w-12 lg:h-12"
       fill="none"
       viewBox="0 0 52 52"
       xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +43,6 @@ export function Mvp() {
   return (
     <svg
       className="inline-block w-10 h-10 lg:w-14 lg:h-14"
-      stroke="currentColor"
       fill="none"
       viewBox="0 0 48 58"
       xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +66,6 @@ export function Engineering() {
   return (
     <svg
       className="inline-block w-10 h-10 lg:w-14 lg:h-14"
-      stroke="currentColor"
       viewBox="0 0 52 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
