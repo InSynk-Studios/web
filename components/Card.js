@@ -42,25 +42,25 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative group overflow-hidden lg:p-6 h-80 lg:h-6/6 rounded-3xl cursor-pointer bg-${props.content.color}`}
+      className={`relative group overflow-hidden p-5 h-80 w-40 lg:w-12/12 lg:h-6/6 rounded-3xl cursor-pointer bg-${props.content.color}`}
     >
-      <div className="mb-5">{props.content.svg}</div>
+      <div className="w-fit">{props.content.svg}</div>
 
-      <div className="absolute transform duration-500 inset-y-40 group-hover:-inset-y-0">
+      <div className="absolute transform w-5/6 duration-500 inset-y-12 group-hover:-inset-y-0 lg:inset-y-44 lg:group-hover:-inset-y-0">
         <p className="text-black text-xl mt-32">{props.content.number}</p>
 
         <div className="divide-y-2 divide-black">
-          <div className="absolute flex m-12 -ml-1 -mt-1">
-            <p className="font-semibold text-xl sm:text-4xl text-left text-black">
+          <div className="absolute mr-20">
+            <p className="font-semibold inline-block text-xl sm:text-3xl text-left text-black">
               {props.content.title}
             </p>
           </div>
-          <div className="absolute mt-40 pt-5">
+          <div className="absolute mt-32 lg:mt-40 lg:pt-4">
             <p className="text-left text-black">{props.content.para}</p>
           </div>
         </div>
 
-        <div className=" pl-56 mt-2">
+        <div className="absolute left-52">
           {/* Right arrow icon */}
           <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
         </div>
@@ -85,11 +85,16 @@ const Card = () => {
           <br />
           or with the further development of your product.
         </p>
-
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
-          {contents.map((content) => {
-            return <CardListItem content={content} key={content.id} />;
-          })}
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
+            {contents.map((content) => {
+              return (
+                <div className="flex justify-center" key={content.id}>
+                  <CardListItem content={content} />
+                </div>
+              );
+            })}
+          </div>
         </div>
         <p className="text-md sm:text-xl font-normal lg:-mt-10 text-gray-400">
           Or,
