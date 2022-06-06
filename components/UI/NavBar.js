@@ -33,7 +33,7 @@ export default function NavBar() {
             animateHeader && "py-4"
           } mx-auto items-center justify-between px-8 trasition ease-in-out duration-500`}
         >
-          <a className="text-xl font-bold tracking-tighter text-indigo-400 pr-8">
+          <a className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer">
             InSynk Studios
           </a>
           <nav>
@@ -41,7 +41,7 @@ export default function NavBar() {
               {menuItems?.map((item) => (
                 <li key={item?.title}>
                   <Link href={item?.url}>
-                    <a className="px-2 lg:px-6 py-6 text-sm md:text-base border-b-2 border-transparent hover:border-indigo-400 leading-[22px] md:px-3 text-white hover:text-indigo-500">
+                    <a className="px-2 lg:px-6 py-6 text-sm md:text-base border-b-2 border-transparent hover:border-indigo-400 leading-5 md:px-3 text-white hover:text-indigo-500">
                       {item?.title}
                     </a>
                   </Link>
