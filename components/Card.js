@@ -23,7 +23,7 @@ const contents = [
     svg: <Ux />,
     number: "02.",
     color: CardColors[1],
-    title: "Ux/UI",
+    title: "UI/UX",
     para: "We will help you with the best design and user experience for your product.",
   },
   {
@@ -47,29 +47,26 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative group overflow-hidden p-5 h-80 w-56 lg:w-12/12 lg:h-6/6 rounded-3xl cursor-pointer ${props.content.color}`}
+      className={`relative block transition-all h-80 w-56 lg:w-12/12 lg:h-6/6 rounded-3xl cursor-pointer text-black group p-8 ${props.content.color}`}
     >
       <div className="w-fit">{props.content.svg}</div>
+      <div className="transform translate-y-20 group-hover:translate-y-0 duration-500">
+        <p className="text-xl mt-36">{props.content.number}</p>
+        <p className="text-xl sm:text-3xl font-semibold pr-3">
+          {props.content.title}
+        </p>
+      </div>
 
-      <div className="absolute transform w-4/5 lg:w-5/6 duration-500 inset-y-24 group-hover:-inset-y-0 lg:inset-y-44 lg:group-hover:-inset-y-0">
-        <p className="text-black text-xl mt-32">{props.content.number}</p>
-
-        <div className="divide-y-2 divide-black">
-          <div className="absolute mr-20">
-            <p className="font-semibold inline-block text-xl sm:text-3xl text-left text-black">
-              {props.content.title}
-            </p>
-          </div>
-          <div className="absolute mt-20 lg:mt-40 lg:pt-4">
-            <p className="text-left text-sm lg:text-lg lg:leading-6 text-black">
+      <div className="transform translate-y-12 opacity-0  group-hover:opacity-100 group-hover:translate-y-0 duration-500">
+        <div className="mt-5">
+          <div className="divide-y-2 divide-black">
+            <div className="flex float-right -mt-16">
+              <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
+            </div>
+            <p className="pt-5 text-sm lg:text-base leading-1 text-black">
               {props.content.para}
             </p>
           </div>
-        </div>
-
-        <div className="absolute left-32 h-10 w-10 lg:h-32 lg:w-32 lg:left-52">
-          {/* Right arrow icon */}
-          <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
         </div>
       </div>
     </div>
