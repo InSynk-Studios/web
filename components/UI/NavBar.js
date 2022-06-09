@@ -31,7 +31,7 @@ export default function NavBar() {
         <div
           className={`flex max-w-screen-xl py-10 ${
             animateHeader && "py-4"
-          } mx-auto items-center justify-between trasition ease-in-out duration-500`}
+          } mx-auto items-center justify-between px-8 sm:px-8 md:px-8 lg:px-0 xl:px-0 trasition ease-in-out duration-500`}
         >
           <a className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer">
             InSynk Studios
