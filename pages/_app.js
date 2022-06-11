@@ -6,7 +6,7 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
-       <Head>
+      <Head>
         <title>InSynk Studios</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>

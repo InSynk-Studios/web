@@ -1,25 +1,18 @@
 import Card from "../components/Card";
+import Client from "../components/Client";
 import Form from "../components/Form";
 import Hero from "../components/Hero";
-import Testimonal from "../components/Testimonal";
+import Background from "../components/ui/Background";
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        <Hero />
-      </main>
-      <div className="relative top-[25rem]">
-        <div className="">
-          <Card />
-        </div>
-        <div>
-          <Testimonal />
-        </div>
-        <div className="top-[25rem]">
-          <Form />
-        </div>
+    <Background>
+      <Hero />
+      <div className="relative top-96">
+        <Card />
+        <Client />
+        <Form />
       </div>
-    </div>
+    </Background>
   );
 }

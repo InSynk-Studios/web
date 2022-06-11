@@ -1,7 +1,13 @@
 import { Fragment } from "react";
-import { Scoping, Ux, Mvp, Engineering } from "./SVG/SVGs";
+import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
 
-const CardColors = ["#cf9c3e", "#cf9c3e", "#cf9c3e", "#9067D4"];
+// Card background colors
+const CardColors = [
+  "bg-customBlue",
+  "bg-white",
+  "bg-customOrange",
+  "bg-customPurple",
+];
 
 const contents = [
   {
@@ -17,8 +23,8 @@ const contents = [
     svg: <Ux />,
     number: "02.",
     color: CardColors[1],
-    title: "Ux/UI",
-    para: "We will help you with the best design and user experience for your product",
+    title: "UI/UX",
+    para: "We will help you with the best design and user experience for your product.",
   },
   {
     id: 3,
@@ -26,7 +32,7 @@ const contents = [
     number: "03.",
     color: CardColors[2],
     title: "MVP Development",
-    para: "We help you create scalable MVP which will act as a strong foundation for your product",
+    para: "We help you create scalable MVP which will act as a strong foundation for your product.",
   },
   {
     id: 4,
@@ -34,40 +40,36 @@ const contents = [
     number: "04.",
     color: CardColors[3],
     title: "Engineering Partnership",
-    para: "We will help you with tailored fit Development Team which will help you scale your product",
+    para: "We will help you with tailored fit Development Team which will help you scale your product.",
   },
 ];
 
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative group overflow-hidden p-6 w-[20rem] h-[28rem] rounded-3xl cursor-pointer bg-[${props.content.color}]`}
+      className={`relative block transition-all h-80 w-56 lg:w-12/12 lg:h-6/6 rounded-3xl cursor-pointer text-black group p-8 ${props.content.color}`}
     >
-      <div className="mb-5">{props.content.svg}</div>
+      <div className="w-fit mb-10 lg:mb-20">{props.content.svg}</div>
+       <div className="flex flex-1 flex-col justify-between">
+      <div className="transform translate-y-24 lg:translate-y-40 group-hover:translate-y-5 lg:group-hover:translate-y-16 duration-500">
+        <p className="text-xl">{props.content.number}</p>
+        <p className="text-xl lg:text-3xl font-semibold pr-3">
+          {props.content.title}
+        </p>
+      </div>
 
-      <div className=" mt-36">
-        <div className="object-cover w-full h-full transform duration-700 backdrop-opacity-100" />
-        <div className="absolute w-full h-full shadow-2xl opacity-20 transform duration-500 inset-y-full group-hover:-inset-y-0"></div>
-        <div className="absolute w-full h-full transform duration-500 inset-y-[10rem] group-hover:-inset-y-0">
-          <p className="text-black text-xl mt-32">{props.content.number}</p>
-
-          <div className="divide-y-2 divide-black ">
-            <div className="absolute flex m-12 -ml-1 -mt-1">
-              <p className="capitalize font-bold text-4xl text-left text-black">
-                {props.content.title}
-              </p>
+      <div className="transform translate-y-16 lg:translate-y-32 opacity-0 group-hover:opacity-100 group-hover:translate-y-6 lg:group-hover:translate-y-16 duration-500">
+        <div className="mt-2 lg:mt-5">
+          <div className="divide-y-2 divide-black">
+            <div className="flex float-right -mt-16 h-10 w-10 lg:h-12 lg:w-12">
+              <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
             </div>
-            <div className="absolute mt-[10rem] p-5">
-              <p className="font-sans text-left w-4/5 text-black">
-                {props.content.para}
-              </p>
-            </div>
-          </div>
-
-          <div className="pl-[12rem] mt-2">
-            <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
+            <p className="pt-2 lg:pt-5 text-sm lg:text-base leading-1">
+              {props.content.para}
+            </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
@@ -76,29 +78,40 @@ const CardListItem = (props) => {
 const Card = () => {
   return (
     <Fragment>
-      <div className="container mx-auto px-24 text-white">
-        <h1 className="text-6xl font-semibold">See how can we help you</h1>
+      <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
+        <h1 className="text-4xl sm:text-6xl font-semibold">
+          See how can we help you
+        </h1>
         <br />
-        <p className="text-xl text-gray-400">Let{"'"}s keep it simple.</p>
-        <p className="text-xl pt-4">
+        <p className="text-lg sm:text-xl font-normal text-gray-400">
+          Let&rsquo;s keep it simple.
+        </p>
+        <p className="text-lg sm:text-xl pt-4 font-normal">
           We help you build your Minimum Viable Product or UX/UI
           <br />
           or with the further development of your product.
         </p>
-
-        <div className="grid grid-cols-1 gap-[1rem] md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
-          {contents.map((content) => {
-            return <CardListItem content={content} key={content.id} />;
-          })}
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
+            {contents.map((content) => {
+              return (
+                <div className="flex justify-center" key={content.id}>
+                  <CardListItem content={content} />
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <p className="text-xl -mt-12 text-gray-400">Or,</p>
-        <p className="text-xl pt-4">
+        <p className="text-md sm:text-xl font-normal lg:-mt-10 text-gray-400">
+          Or,
+        </p>
+        <p className="text-md sm:text-xl font-normal pt-4">
           You can let us help you with all of the above mentioned services
           <br />
           and you can call us your &rdquo;Design {"&"} Development
           Partner&rdquo;
         </p>
-      </div>
+      </section>
     </Fragment>
   );
 };

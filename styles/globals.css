@@ -1,3 +1,4 @@
+@import "../fonts/fonts.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,9 +21,10 @@
     --y: 98.33%;
     background: radial-gradient(
       at center center,
-      rgb(0, 0, 0),
-      rgb(30, 64, 175),
-      rgb(219, 234, 254)
+      rgb(10, 29, 82),
+      rgb(2, 81, 202),
+      rgb(116, 215, 254),
+      rgb(255, 255, 255)
     );
   }
 }
