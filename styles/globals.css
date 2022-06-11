@@ -8,23 +8,3 @@
     @apply bg-black overflow-x-hidden;
   }
 }
-
-@layer utilities {
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-  .bg-circle {
-    --x: 0;
-    --y: 98.33%;
-    background: radial-gradient(
-      at center center,
-      rgb(10, 29, 82),
-      rgb(2, 81, 202),
-      rgb(116, 215, 254),
-      rgb(255, 255, 255)
-    );
-  }
-}
