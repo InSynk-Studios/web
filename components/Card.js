@@ -77,10 +77,9 @@ const CardListItem = (props) => {
 };
 
 const Card = () => {
-  const contact = useRef(null);
   const scrollToContact = () => {
     window.scrollTo({
-      top: contact.current.offsetTop,
+      top: document.documentElement.scrollHeight,
       behavior: "smooth",
     });
   };
