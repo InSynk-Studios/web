@@ -1,4 +1,5 @@
-import { Fragment } from "react";
+import { forwardRef, Fragment, useRef } from "react";
+import { useRouter } from "next/router";
 import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
 
 // Card background colors
@@ -76,6 +77,14 @@ const CardListItem = (props) => {
 };
 
 const Card = () => {
+  const contact = useRef(null);
+  const scrollToContact = () => {
+    window.scrollTo({
+      top: contact.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Fragment>
       <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
@@ -95,8 +104,12 @@ const Card = () => {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
             {contents.map((content) => {
               return (
-                <div className="flex justify-center" key={content.id}>
-                  <CardListItem content={content} />
+                <div key={content.id}>
+                  <div onClick={scrollToContact}>
+                    <a className="flex justify-center">
+                      <CardListItem content={content} />
+                    </a>
+                  </div>
                 </div>
               );
             })}
