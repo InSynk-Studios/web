@@ -1,8 +1,12 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useRef, useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 const isEmpty = (value) => value.trim() === "";
 
-function Form(props) {
+function Form() {
+  const router = useRouter();
+  const [didSubmit, setDidSubmit] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formInputValidity, setFormInputValidity] = useState({
     name: true,
     email: true,
@@ -13,6 +17,7 @@ function Form(props) {
   const emailInputRef = useRef();
   const messageInputRef = useRef();
 
+  // Checking if the form is valid
   const confirmHandler = (event) => {
     event.preventDefault();
 
@@ -27,11 +32,11 @@ function Form(props) {
 
     setFormInputValidity({
       name: enteredNameIsValid,
-      address: enteredEmailIsValid,
-      city: enteredMessageIsValid,
+      email: enteredEmailIsValid,
+      message: enteredMessageIsValid,
     });
 
-    // assigning the value of formInputValidity to formIsValid
+    // Combining all the validations
     const formIsValid =
       enteredNameIsValid && enteredEmailIsValid && enteredMessageIsValid;
 
@@ -40,14 +45,30 @@ function Form(props) {
       return;
     }
 
-    // Submit Form data to server
-    // ToDo : connet to api server to send data
-    props.onSubmit({
-      name: enteredName,
-      email: enteredEmail,
-      message: enteredMessage,
-    });
+    // Submit form data
+    setIsSubmitting(true);
+    fetch("https://formsubmit.co/ajax/support@insynkstudios.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: enteredName,
+        email: enteredEmail,
+        message: enteredMessage,
+      }),
+    }).then((response) => response.json());
+    setIsSubmitting(false);
+    setDidSubmit(true);
   };
+
+  // Checking if form is submitted then redirect to the thank-you page
+  useEffect(() => {
+    if (didSubmit) {
+      router.push("/Thank-you");
+    }
+  }, [didSubmit, router]);
 
   return (
     <Fragment>
@@ -58,8 +79,8 @@ function Form(props) {
         <div className="container">
           <div className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-end">
             <div className="w-full lg:w-2/3 xl:w-6/12">
-              <div className="bg-gray-100 dark:bg-transparent relative rounded-lg p-8 sm:p-12 shadow-lg">
-                <div className="max-w-[570px] mb-12 lg:mb-0">
+              <div className="bg-gray-100 dark:bg-transparent relative lg:left-10 rounded-lg p-8 sm:p-12 shadow-lg">
+                <div className="max-w-xl mb-12 lg:mb-0">
                   <h1 className="text-6xl font-semibold text-white">
                     Let&rsquo;s chat about your project
                   </h1>
@@ -69,22 +90,26 @@ function Form(props) {
                   </p>
                 </div>
 
-                <form onSubmit={confirmHandler}>
+                <form role="form" onSubmit={confirmHandler}>
+                  <input type="hidden" name="_captcha" value="false" />
+
                   <div
                     className={`${"mb-6 mt-12"} ${
                       formInputValidity.name ? "" : "border-red-500"
                     }`}
                   >
-                    <lable htmlFor="name" className="pb-12">
-                      Name
-                    </lable>
+                    <div className="pb-3">
+                      <lable htmlFor="name">Name</lable>
+                    </div>
+                    <input type="text" name="_honey" className="hidden" />
                     <input
                       type="text"
                       placeholder="Your Name"
-                      id="name"
-                      ref={nameInputRef}
+                      name="name"
                       className={`${"w-full rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
                       ${!formInputValidity.name && "dark:border-red-500"}`}
+                      ref={nameInputRef}
+                      id="name"
                     />
                   </div>
                   <div
@@ -92,16 +117,18 @@ function Form(props) {
                       formInputValidity.email ? "" : "border-red-500"
                     }`}
                   >
-                    <label htmlFor="address" className="pb-5">
-                      Email
-                    </label>
+                    <div className="pb-3">
+                      <label htmlFor="address">Email</label>
+                    </div>
                     <input
                       type="email"
                       placeholder="you@company.com"
                       id="email"
+                      name="email"
                       ref={emailInputRef}
                       className={`${"w-full rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
                       ${!formInputValidity.email && "dark:border-red-500"}`}
+                      required
                     />
                   </div>
 
@@ -110,16 +137,17 @@ function Form(props) {
                       formInputValidity.message ? "" : "border-red-500"
                     }`}
                   >
-                    <label htmlFor="message" className="pb-5">
-                      How can we help?
-                    </label>
+                    <div className="pb-3">
+                      <label htmlFor="message">How can we help?</label>
+                    </div>
                     <textarea
                       rows="6"
                       placeholder="Tell us a little about your project..."
                       id="message"
-                      ref={messageInputRef}
+                      name="message"
                       className={`${"w-full resize-none rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
-                      ${!formInputValidity.email && "dark:border-red-500"}`}
+                      ${!formInputValidity.message && "dark:border-red-500"}`}
+                      ref={messageInputRef}
                     ></textarea>
                   </div>
                   <div>
@@ -149,6 +177,7 @@ function Form(props) {
           </div>
         </div>
       </section>
+      {!isSubmitting && didSubmit}
     </Fragment>
   );
 }
