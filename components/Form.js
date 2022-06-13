@@ -66,7 +66,7 @@ function Form() {
   // Checking if form is submitted then redirect to the thank-you page
   useEffect(() => {
     if (didSubmit) {
-      router.push("/Thank-you");
+      router.push("/thank-you");
     }
   }, [didSubmit, router]);
 
