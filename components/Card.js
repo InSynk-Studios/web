@@ -1,6 +1,6 @@
 import { forwardRef, Fragment, useRef } from "react";
 import { useRouter } from "next/router";
-import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
+import { Scoping, Engineering, Mvp, Ux } from "./SVG/SVGs";
 
 // Card background colors
 const CardColors = [
