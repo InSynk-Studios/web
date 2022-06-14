@@ -1,6 +1,5 @@
-import { forwardRef, Fragment, useRef } from "react";
-import { useRouter } from "next/router";
-import { Scoping, Engineering, Mvp, Ux } from "./SVG/SVGs";
+import { Fragment } from "react";
+import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
 
 // Card background colors
 const CardColors = [
@@ -63,7 +62,7 @@ const CardListItem = (props) => {
           <div className="mt-2 lg:mt-5">
             <div className="divide-y-2 divide-black">
               <div className="flex float-right -mt-16 h-10 w-10 lg:h-12 lg:w-12">
-                <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
+                <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" alt="" />
               </div>
               <p className="pt-2 lg:pt-5 text-sm lg:text-base leading-1">
                 {props.content.para}
