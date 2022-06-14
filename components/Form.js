@@ -1,27 +1,86 @@
-import { Fragment } from "react";
+import { Fragment, useRef, useState, useEffect } from "react";
+import { useRouter } from "next/router";
+
+const isEmpty = (value) => value.trim() === "";
 
 function Form() {
-  const preventClick = (event) => {
+  const router = useRouter();
+  const [didSubmit, setDidSubmit] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formInputValidity, setFormInputValidity] = useState({
+    name: true,
+    email: true,
+    message: true,
+  });
+
+  const nameInputRef = useRef();
+  const emailInputRef = useRef();
+  const messageInputRef = useRef();
+
+  // Checking if the form is valid
+  const confirmHandler = (event) => {
     event.preventDefault();
+
+    const enteredName = nameInputRef.current.value;
+    const enteredEmail = emailInputRef.current.value;
+    const enteredMessage = messageInputRef.current.value;
+
+    // Validating input entered by user
+    const enteredNameIsValid = !isEmpty(enteredName);
+    const enteredEmailIsValid = !isEmpty(enteredEmail);
+    const enteredMessageIsValid = !isEmpty(enteredMessage);
+
+    setFormInputValidity({
+      name: enteredNameIsValid,
+      email: enteredEmailIsValid,
+      message: enteredMessageIsValid,
+    });
+
+    // Combining all the validations
+    const formIsValid =
+      enteredNameIsValid && enteredEmailIsValid && enteredMessageIsValid;
+
+    // If form inputs are invalid then return nothing
+    if (!formIsValid) {
+      return;
+    }
+
+    // Submit form data
+    setIsSubmitting(true);
+    fetch("https://formsubmit.co/ajax/support@insynkstudios.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: enteredName,
+        email: enteredEmail,
+        message: enteredMessage,
+      }),
+    }).then((response) => response.json());
+    setIsSubmitting(false);
+    setDidSubmit(true);
   };
+
+  // Checking if form is submitted then redirect to the thank-you page
+  useEffect(() => {
+    if (didSubmit) {
+      router.push("/thank-you");
+    }
+  }, [didSubmit, router]);
 
   return (
     <Fragment>
       <section
         className="overflow-hidden relative z-10 font-inter-400"
-        data-aos="fade-up"
         id="contact"
       >
         <div className="container">
           <div className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-end">
-            <div
-              className="w-full lg:w-2/3 xl:w-6/12"
-              data-aos="fade-up"
-              data-aos-delay="500"
-              data-aos-duration="2000"
-            >
-              <div className="bg-gray-100 dark:bg-transparent relative rounded-lg p-8 sm:p-12 shadow-lg">
-                <div className="max-w-[570px] mb-12 lg:mb-0">
+            <div className="w-full lg:w-2/3 xl:w-6/12">
+              <div className="bg-gray-100 dark:bg-transparent relative lg:left-10 rounded-lg p-8 sm:p-12 shadow-lg">
+                <div className="max-w-xl mb-12 lg:mb-0">
                   <h1 className="text-6xl font-semibold text-white">
                     Let&rsquo;s chat about your project
                   </h1>
@@ -30,74 +89,65 @@ function Form() {
                     <span className="text-white">hello@insynkstudios.com</span>
                   </p>
                 </div>
-                <form>
-                  <div className="mb-6 mt-12">
-                    <h2 className="pb-5">Name</h2>
+
+                <form role="form" onSubmit={confirmHandler}>
+                  <input type="hidden" name="_captcha" value="false" />
+
+                  <div
+                    className={`${"mb-6 mt-12"} ${
+                      formInputValidity.name ? "" : "border-red-500"
+                    }`}
+                  >
+                    <div className="pb-3">
+                      <lable htmlFor="name">Name</lable>
+                    </div>
+                    <input type="text" name="_honey" className="hidden" />
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="
-                            w-full
-                            rounded-lg
-                            p-3
-                            text-gray-800
-                            dark:text-gray-50
-                            border-2
-                            bg-transparent 
-                            border-gray-500
-                            dark:border-[#6C6C6C]
-                            outline-none
-                            focus-visible:shadow-none
-                            focus:border-blue-200
-                            "
-                      name="full_name"
-                      id="full_name"
+                      name="name"
+                      className={`${"w-full rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
+                      ${!formInputValidity.name && "dark:border-red-500"}`}
+                      ref={nameInputRef}
+                      id="name"
                     />
                   </div>
-                  <div className="mb-6">
-                    <h2 className="pb-5">Email</h2>
+                  <div
+                    className={`${"mb-6"} ${
+                      formInputValidity.email ? "" : "border-red-500"
+                    }`}
+                  >
+                    <div className="pb-3">
+                      <label htmlFor="address">Email</label>
+                    </div>
                     <input
                       type="email"
                       placeholder="you@company.com"
-                      className="
-                            w-full
-                            rounded-lg
-                            p-3
-                            text-gray-800
-                            dark:text-gray-50
-                            border-2
-                            bg-transparent 
-                            border-gray-500
-                            dark:border-[#6C6C6C]
-                            outline-none
-                            focus-visible:shadow-none
-                            focus:border-blue-200
-                            "
-                      name="email"
                       id="email"
+                      name="email"
+                      ref={emailInputRef}
+                      className={`${"w-full rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
+                      ${!formInputValidity.email && "dark:border-red-500"}`}
+                      required
                     />
                   </div>
 
-                  <div className="mb-6">
-                    <h2 className="pb-5">How can we help?</h2>
+                  <div
+                    className={`${"mb-6"} ${
+                      formInputValidity.message ? "" : "border-red-500"
+                    }`}
+                  >
+                    <div className="pb-3">
+                      <label htmlFor="message">How can we help?</label>
+                    </div>
                     <textarea
                       rows="6"
                       placeholder="Tell us a little about your project..."
-                      className="w-full resize-none
-                      rounded-lg
-                            p-3
-                            text-gray-800
-                            dark:text-gray-50
-                            border-2
-                            bg-transparent 
-                            border-gray-500
-                            dark:border-[#6C6C6C]
-                            outline-none
-                            focus-visible:shadow-none
-                            focus:border-blue-200
-                            "
-                      name="message"
                       id="message"
+                      name="message"
+                      className={`${"w-full resize-none rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
+                      ${!formInputValidity.message && "dark:border-red-500"}`}
+                      ref={messageInputRef}
                     ></textarea>
                   </div>
                   <div>
@@ -117,7 +167,6 @@ function Form() {
                             duration-500
                             hover:bg-gray-400
                             "
-                      onClick={preventClick}
                     >
                       Send Message
                     </button>
@@ -128,6 +177,7 @@ function Form() {
           </div>
         </div>
       </section>
+      {!isSubmitting && didSubmit}
     </Fragment>
   );
 }
