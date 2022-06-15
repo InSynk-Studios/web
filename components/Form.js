@@ -58,7 +58,7 @@ function Form() {
         email: enteredEmail,
         message: enteredMessage,
       }),
-    }).then((response) => response.json());
+    }).then((response) => {console.log(response.json())});
     setIsSubmitting(false);
     setDidSubmit(true);
   };
@@ -72,14 +72,11 @@ function Form() {
 
   return (
     <Fragment>
-      <section
-        className="overflow-hidden relative z-10 font-inter-400"
-        id="contact"
-      >
+      <section className="overflow-hidden relative font-inter-400" id="contact">
         <div className="container">
           <div className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-end">
             <div className="w-full lg:w-2/3 xl:w-6/12">
-              <div className="bg-gray-100 dark:bg-transparent relative lg:left-10 rounded-lg p-8 sm:p-12 shadow-lg">
+              <div className="bg-gray-100 dark:bg-transparent relative lg:left-10 rounded-lg py-8 sm:p-12 shadow-lg">
                 <div className="max-w-xl mb-12 lg:mb-0">
                   <h1 className="text-6xl font-semibold text-white">
                     Let&rsquo;s chat about your project
@@ -99,7 +96,7 @@ function Form() {
                     }`}
                   >
                     <div className="pb-3">
-                      <lable htmlFor="name">Name</lable>
+                      <label htmlFor="name">Name</label>
                     </div>
                     <input type="text" name="_honey" className="hidden" />
                     <input
@@ -153,20 +150,7 @@ function Form() {
                   <div>
                     <button
                       type="submit"
-                      className="
-                            w-full
-                            text-black
-                            hover:text-black
-                            bg-white 
-                            rounded-lg
-                            border border-primary
-                            dark:border-[#6C6C6C]
-                            p-3
-                            transition
-                            ease-in-out
-                            duration-500
-                            hover:bg-gray-400
-                            "
+                      className="w-full text-black hover:text-white bg-white rounded-lg border border-primary dark:border-white p-3 transition ease-in-out duration-200 hover:bg-transparent"
                     >
                       Send Message
                     </button>

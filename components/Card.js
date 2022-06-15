@@ -1,5 +1,4 @@
-import { forwardRef, Fragment, useRef } from "react";
-import { useRouter } from "next/router";
+import { Fragment } from "react";
 import { Scoping, Engineering, Mvp, Ux } from "./SVG/SVGs";
 
 // Card background colors
@@ -48,10 +47,10 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={`relative block transition-all h-80 w-56 lg:w-12/12 lg:h-6/6 rounded-3xl cursor-pointer text-black group p-8 ${props.content.color}`}
+      className={` relative transition-all h-80 mx-10 lg:mx-0 lg:h-6/6 rounded-3xl cursor-pointer text-black group p-8 ${props.content.color}`}
     >
       <div className="w-fit mb-10 lg:mb-20">{props.content.svg}</div>
-      <div className="flex flex-1 flex-col justify-between">
+      <div className="">
         <div className="transform translate-y-24 lg:translate-y-40 group-hover:translate-y-5 lg:group-hover:translate-y-16 duration-500">
           <p className="text-xl">{props.content.number}</p>
           <p className="text-xl lg:text-3xl font-semibold pr-3">

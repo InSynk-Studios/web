@@ -1,13 +1,20 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Logo } from "../SVG/SVGs";
 
 export default function NavBar() {
   const [animateHeader, setAnimateHeader] = useState(false);
+
+  const handleHeaderAnimation = () => {
+    if (window.scrollY > 140) {
+      setAnimateHeader(true);
+    } else setAnimateHeader(false);
+  };
+
   useEffect(() => {
+    handleHeaderAnimation();
     const listener = () => {
-      if (window.scrollY > 140) {
-        setAnimateHeader(true);
-      } else setAnimateHeader(false);
+      handleHeaderAnimation();
     };
     window.addEventListener("scroll", listener);
     return () => {
@@ -29,14 +36,17 @@ export default function NavBar() {
     >
       <div className="max-w-7xl mx-auto">
         <div
-          className={`flex max-w-screen-xl py-10 ${
-            animateHeader && "py-4"
+          className={`flex max-w-screen-xl ${
+            animateHeader ? "py-5" : "py-10"
           } mx-auto items-center justify-between px-8 sm:px-8 md:px-8 lg:px-0 xl:px-0 trasition ease-in-out duration-500`}
         >
-          <a className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer">
-            InSynk Studios
-          </a>
-          <nav>
+          <Link
+            href="/"
+            className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer"
+          >
+            <Logo />
+          </Link>
+          {/* <nav>
             <ul className="flex items-center justify-start">
               {menuItems?.map((item) => (
                 <li key={item?.title}>
@@ -48,7 +58,7 @@ export default function NavBar() {
                 </li>
               ))}
             </ul>
-          </nav>
+          </nav> */}
         </div>
       </div>
     </header>
