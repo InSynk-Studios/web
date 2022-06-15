@@ -44,7 +44,9 @@ export default function NavBar() {
             href="/"
             className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer"
           >
-            <Logo />
+            <a>
+              <Logo />
+            </a>
           </Link>
           {/* <nav>
             <ul className="flex items-center justify-start">
