@@ -85,7 +85,7 @@ const Card = () => {
 
   return (
     <Fragment>
-      <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
+      <div className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
         <h1 className="text-4xl sm:text-6xl font-semibold">
           See how can we help you
         </h1>
@@ -122,7 +122,7 @@ const Card = () => {
           and you can call us your &rdquo;Design {"&"} Development
           Partner&rdquo;
         </p>
-      </section>
+      </div>
     </Fragment>
   );
 };

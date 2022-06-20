@@ -72,7 +72,7 @@ function Form() {
 
   return (
     <Fragment>
-      <section className="overflow-hidden relative font-inter-400" id="contact">
+      <div className="overflow-hidden relative font-inter-400" id="contact">
         <div className="container">
           <div className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-end">
             <div className="w-full lg:w-2/3 xl:w-6/12">
@@ -160,7 +160,7 @@ function Form() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
       {!isSubmitting && didSubmit}
     </Fragment>
   );
