@@ -3,7 +3,6 @@ import Client from "../components/Client";
 import Form from "../components/Form";
 import Hero from "../components/Hero";
 import Background from "../components/ui/Background";
-import "../components/svg/circle.svg";
 
 export default function Home() {
   if (typeof window !== "undefined") {
@@ -11,11 +10,11 @@ export default function Home() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           let x = 50 * Number(entry.target.id.replace("sec-", "") - 1); //change to whatever you want the x to be for sec-n
-          bg.style.setProperty("--x", x + "%");
+          circle.style.setProperty("--x", x + "%");
         }
       });
     }
-    const bg = document.querySelector(".bg");
+    const circle = document.querySelector(".bg");
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(callback);
 
@@ -25,8 +24,15 @@ export default function Home() {
   }
   return (
     <Background>
-      <circle />
+      {/* Work in progress start */}
+
       <div className="bg"></div>
+
+      {/* Temporary svg just for testing */}
+      {/* <div className="svgBack"></div> */}
+
+      {/* Work in progress end */}
+
       <section id="sec-1" className="relative">
         <Hero />
       </section>

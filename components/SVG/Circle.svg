@@ -1,12 +1,7 @@
-<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <radialGradient id="myGradient">
-      <stop offset="10%" stop-color="gold" />
-      <stop offset="95%" stop-color="red" />
-    </radialGradient>
-  </defs>
-
-  <!-- using my radial gradient -->
-  <circle cx="5" cy="5" r="4" fill="url('#myGradient')" />
-</svg>
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="#FF0066"
+          d="M52.6,-71.8C67.8,-61.5,79.2,-45.5,85.1,-27.6C91.1,-9.7,91.5,10.1,85.7,27.9C80,45.7,68.1,61.6,52.8,72C37.5,82.4,18.7,87.4,-0.1,87.5C-18.9,87.6,-37.8,82.8,-53.3,72.4C-68.9,62.1,-81.1,46.2,-85.6,28.7C-90,11.2,-86.6,-7.9,-80.1,-25.5C-73.7,-43.1,-64.1,-59.1,-50.2,-69.8C-36.4,-80.6,-18.2,-86.1,0.3,-86.5C18.8,-86.9,37.5,-82.2,52.6,-71.8Z"
+          transform="translate(100 100)"
+        />
+      </svg>

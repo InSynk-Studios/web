@@ -7,25 +7,38 @@
   body {
     @apply bg-black overflow-x-hidden;
   }
+}
+
+/* Work in progress */
+@layer utilities {
   .bg {
     --x: 0;
     --y: 48.33%;
     position: fixed;
     display: block;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
     background: radial-gradient(
+      at var(--x) var(--y),
       #0a1d52 0%,
       #0251ca 35.94%,
       #74d7fe 82.81%,
       #ffffff 100%,
       transparent 51%
     );
-    background-size: 400px 400px;
-    background-position: var(--x) var(--y);
-    background-repeat: no-repeat;
-    z-index: -1;
+  }
+/* Temporary svg for testing */
+  .svgBack {
+    --x: 0;
+    --y: 48.33%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url("../components/svg/Circle.svg");
+    background-position: at var(--x) var(--y);
+    height: 400px;
+    width: 400px;
   }
 }
