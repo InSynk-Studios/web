@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Fragment } from "react";
 
 const ClientCard = (props) => {
@@ -7,9 +8,16 @@ const ClientCard = (props) => {
       so that the borders overlap and do not append with each other. */}
       <div
         style={{ marginTop: "-1px", marginLeft: "-1px" }}
-        className={`flex flex-col items-center p-10 border border-gray-600 ${props.className}`}
+        className={`flex flex-col items-center px-10 py-4 border border-gray-600 ${props.className}`}
       >
-        <div className="w-32 h-10 rounded-2xl bg-neutral-800 text-white "></div>
+        <a
+          href={props.client.url}
+          target="_blank"
+          rel="noreferrer"
+          className="w-20 md:w-28 hover:opacity-60 transition ease-in-out duration-200"
+        >
+          <Image src={props.client.image} alt={props.client.name} />
+        </a>
       </div>
     </Fragment>
   );

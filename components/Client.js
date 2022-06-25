@@ -1,12 +1,13 @@
 import ClientRow from "./client/ClientRow";
+import onChainLogo from "../assets/clients/onchain.png";
 
 function Client() {
   const clients = [
     {
       id: 1,
-      name: "Test",
-      url: "",
-      image: "",
+      name: "OnChain Labs",
+      url: "https://onchainlabs.dev",
+      image: onChainLogo,
     },
   ];
 

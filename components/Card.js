@@ -45,9 +45,16 @@ const contents = [
 ];
 
 const CardListItem = (props) => {
+  const scrollToContact = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div
-      className={` relative transition-all h-80 mx-0 lg:h-6/6 rounded-3xl cursor-pointer text-black group p-8 ${props.content.color}`}
+      className={` relative transition-all h-80 mx-0 lg:h-6/6 rounded-3xl text-black group p-8 ${props.content.color}`}
     >
       <div className="w-fit mb-10 lg:mb-20">{props.content.svg}</div>
       <div className="">
@@ -61,7 +68,10 @@ const CardListItem = (props) => {
         <div className="transform translate-y-16 lg:translate-y-32 opacity-0 group-hover:opacity-100 group-hover:translate-y-6 lg:group-hover:translate-y-16 duration-500">
           <div className="mt-2 lg:mt-5">
             <div className="divide-y-2 divide-black">
-              <div className="flex float-right -mt-16 h-10 w-10 lg:h-12 lg:w-12">
+              <div
+                onClick={scrollToContact}
+                className="flex float-right -mt-16 h-10 w-10 lg:h-12 lg:w-12 cursor-pointer"
+              >
                 <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
               </div>
               <p className="pt-2 lg:pt-5 text-sm lg:text-base leading-1">
@@ -76,13 +86,6 @@ const CardListItem = (props) => {
 };
 
 const Card = () => {
-  const scrollToContact = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <Fragment>
       <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
@@ -103,7 +106,7 @@ const Card = () => {
             {contents.map((content) => {
               return (
                 <div key={content.id}>
-                  <div onClick={scrollToContact}>
+                  <div>
                     <a className="flex justify-center">
                       <CardListItem content={content} />
                     </a>
