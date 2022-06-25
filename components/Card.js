@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Scoping, Engineering, Mvp, Ux } from "./SVG/SVGs";
+import { Scoping, Engineering, Mvp, Ux } from "./svg/SVGs";
 
 // Card background colors
 const CardColors = [

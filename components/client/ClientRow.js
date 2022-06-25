@@ -1,33 +1,31 @@
 import { Fragment } from "react";
 
-const tables = [
-  {
-    id: 1,
-    border: "border-r border-y",
-  },
-  {
-    id: 2,
-    border: "border-r border-b",
-  },
-];
-
-const ClientList = (props) => {
+const ClientCard = (props) => {
   return (
     <Fragment>
+      {/* Using custom `style` in the following to use marginLeft and marginTop with "-1px"
+      so that the borders overlap and do not append with each other. */}
       <div
-        className={`flex flex-col items-center p-10 border-gray-600 ${props.table.border}`}
+        style={{ marginTop: "-1px", marginLeft: "-1px" }}
+        className={`flex flex-col items-center p-10 border border-gray-600 ${props.className}`}
       >
-        <div className="w-32 h-10 rounded-2xl bg-neutral-800"></div>
+        <div className="w-32 h-10 rounded-2xl bg-neutral-800 text-white "></div>
       </div>
     </Fragment>
   );
 };
 
-const ClientRow = () => {
+const ClientRow = ({ clients, className }) => {
   return (
-    <div>
-      {tables.map((table) => (
-        <ClientList table={table} key={table.id} />
+    <div
+      className={`flex flex-wrap justify-center border-gray-600 ${className}`}
+    >
+      {clients.map((client) => (
+        <ClientCard
+          className="w-full md:w-1/2 lg:w-1/4"
+          client={client}
+          key={client.id}
+        />
       ))}
     </div>
   );
