@@ -47,7 +47,7 @@ const contents = [
 const CardListItem = (props) => {
   return (
     <div
-      className={` relative transition-all h-80 mx-10 lg:mx-0 lg:h-6/6 rounded-3xl cursor-pointer text-black group p-8 ${props.content.color}`}
+      className={` relative transition-all h-80 mx-0 lg:h-6/6 rounded-3xl cursor-pointer text-black group p-8 ${props.content.color}`}
     >
       <div className="w-fit mb-10 lg:mb-20">{props.content.svg}</div>
       <div className="">
@@ -86,7 +86,7 @@ const Card = () => {
   return (
     <Fragment>
       <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
-        <h1 className="text-4xl sm:text-6xl font-semibold">
+        <h1 className="text-4xl md:text-6xl font-semibold">
           See how can we help you
         </h1>
         <br />

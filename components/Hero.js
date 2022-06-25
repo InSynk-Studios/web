@@ -3,7 +3,7 @@ import { Fragment } from "react";
 function Hero() {
   return (
     <Fragment>
-      <section className="mt-40 lg:mt-80">
+      <section className="mt-60 lg:mt-80">
         <div className="lg:flex-grow flex flex-col md:items-start md:text-left mb-16 md:mb-0 text-white">
           <h1 className="font-inter-600 text-6xl sm:text-8xl mb-4">
             We are a{" "}

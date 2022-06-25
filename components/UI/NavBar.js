@@ -31,7 +31,7 @@ export default function NavBar() {
   return (
     <header
       className={`w-full top-0 backdrop-filter backdrop-blur-lg fixed z-10 trasition ease-in-out duration-500 ${
-        animateHeader && "bg-white/30 lg:bg-black/30"
+        animateHeader && "bg-black/30"
       }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -44,10 +44,9 @@ export default function NavBar() {
             href="/"
             className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer"
           >
-            <a>
-              <Logo />
-            </a>
+            <Logo className="h-8 lg:h-10" />
           </Link>
+          {/* TODO: Uncomment as we add more pages to the site */}
           {/* <nav>
             <ul className="flex items-center justify-start">
               {menuItems?.map((item) => (

@@ -78,12 +78,12 @@ function Form() {
             <div className="w-full lg:w-2/3 xl:w-6/12">
               <div className="bg-gray-100 dark:bg-transparent relative lg:left-10 rounded-lg py-8 sm:p-12 shadow-lg">
                 <div className="max-w-xl mb-12 lg:mb-0">
-                  <h1 className="text-6xl font-semibold text-white">
+                  <h1 className="text-4xl md:text-6xl font-semibold text-white">
                     Let&rsquo;s chat about your project
                   </h1>
-                  <p className="text-xl pt-5 text-gray-400">
+                  <p className="text-lg md:text-xl pt-5 text-gray-400">
                     You can reach us anytime via{" "}
-                    <span className="text-white">hello@insynkstudios.com</span>
+                    <span className="text-white">support@insynkstudios.com</span>
                   </p>
                 </div>
 
