@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Logo } from "../svg/svgs";
+import logo from "../../assets/logo.svg";
 
 export default function NavBar() {
   const [animateHeader, setAnimateHeader] = useState(false);
@@ -44,7 +45,9 @@ export default function NavBar() {
             href="/"
             className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer"
           >
-            <Logo className="h-8 lg:h-10" />
+            <div className="w-32 lg:w-56 relative">
+              <Image src={logo} alt="insynk-logo" />
+            </div>
           </Link>
           {/* TODO: Uncomment as we add more pages to the site */}
           {/* <nav>
