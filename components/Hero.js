@@ -1,9 +1,17 @@
 import { Fragment } from "react";
+import abstractEllipse from "../assets/abstract/ellipse.svg";
+import Image from "next/image";
 
 function Hero() {
   return (
     <Fragment>
-      <section className="mt-60 lg:mt-80">
+      <section className="relative my-60 lg:my-80">
+        <div
+          style={{ right: "-45%", top: "0%" }}
+          className="absolute w-3/5 -z-20 hidden xl:block"
+        >
+          <Image src={abstractEllipse} alt="ellipse" />
+        </div>
         <div className="lg:flex-grow flex flex-col md:items-start md:text-left mb-16 md:mb-0 text-white">
           <h1 className="font-inter-600 text-6xl sm:text-8xl mb-4">
             We are a{" "}

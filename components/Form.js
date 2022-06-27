@@ -58,7 +58,9 @@ function Form() {
         email: enteredEmail,
         message: enteredMessage,
       }),
-    }).then((response) => {console.log(response.json())});
+    }).then((response) => {
+      console.log(response.json());
+    });
     setIsSubmitting(false);
     setDidSubmit(true);
   };
@@ -83,7 +85,9 @@ function Form() {
                   </h1>
                   <p className="text-lg md:text-xl pt-5 text-gray-400">
                     You can reach us anytime via{" "}
-                    <span className="text-white">support@insynkstudios.com</span>
+                    <span className="text-white">
+                      support@insynkstudios.com
+                    </span>
                   </p>
                 </div>
 

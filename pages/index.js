@@ -8,11 +8,11 @@ export default function Home() {
   return (
     <Background>
       <Hero />
-      <div className="relative top-96">
         <Card />
         <Client />
         <Form />
-      </div>
+      {/* <div className="">
+      </div> */}
     </Background>
   );
 }
