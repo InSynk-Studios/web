@@ -78,7 +78,7 @@ function Form() {
         <div className="container">
           <div className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-end">
             <div className="w-full lg:w-2/3 xl:w-6/12">
-              <div className="bg-gray-100 dark:bg-transparent relative lg:left-10 rounded-lg py-8 sm:p-12 shadow-lg">
+              <div className="relative lg:left-10 rounded-lg py-8 sm:p-12 shadow-lg">
                 <div className="max-w-xl mb-12 lg:mb-0">
                   <h1 className="text-4xl md:text-6xl font-semibold text-white">
                     Let&rsquo;s chat about your project
@@ -99,7 +99,7 @@ function Form() {
                       formInputValidity.name ? "" : "border-red-500"
                     }`}
                   >
-                    <div className="pb-3">
+                    <div className="pb-3 text-white">
                       <label htmlFor="name">Name</label>
                     </div>
                     <input type="text" name="_honey" className="hidden" />
@@ -118,7 +118,7 @@ function Form() {
                       formInputValidity.email ? "" : "border-red-500"
                     }`}
                   >
-                    <div className="pb-3">
+                    <div className="pb-3 text-white">
                       <label htmlFor="address">Email</label>
                     </div>
                     <input
@@ -138,7 +138,7 @@ function Form() {
                       formInputValidity.message ? "" : "border-red-500"
                     }`}
                   >
-                    <div className="pb-3">
+                    <div className="pb-3 text-white">
                       <label htmlFor="message">How can we help?</label>
                     </div>
                     <textarea
