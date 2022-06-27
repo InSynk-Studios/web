@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Logo } from "../svg/SVGs";
+import { Logo } from "../svg/svgs";
 
 export default function NavBar() {
   const [animateHeader, setAnimateHeader] = useState(false);
