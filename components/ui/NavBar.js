@@ -45,7 +45,7 @@ export default function NavBar() {
             href="/"
             className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer"
           >
-            <div className="w-32 lg:w-56 relative">
+            <div className="flex w-32 lg:w-56 relative">
               <Image src={logo} alt="insynk-logo" />
             </div>
           </Link>
