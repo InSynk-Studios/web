@@ -43,7 +43,7 @@ const contents = [
     svg: engineering,
     number: "04.",
     color: CardColors[3],
-    title: "Engineering Partnership",
+    title: "Development Partnership",
     para: "We help you design, develop and scale your Product from MVP to PMF.",
   },
 ];
