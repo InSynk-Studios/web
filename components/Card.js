@@ -20,7 +20,7 @@ const contents = [
     number: "01.",
     color: CardColors[0],
     title: "Product Scoping",
-    para: "We help you brainstorm all the possible user stories and feature sets valid for your MVP.",
+    para: "We help you brainstorm user stories and feature sets required for your MVP.",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const contents = [
     number: "02.",
     color: CardColors[1],
     title: "UI/UX",
-    para: "We will help you with the best design and user experience for your product.",
+    para: "We help you with creating the best design and user experience for your product.",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const contents = [
     number: "03.",
     color: CardColors[2],
     title: "MVP Development",
-    para: "We help you create scalable MVP which will act as a strong foundation for your product.",
+    para: "We help you design, develop and launch a scalable MVP that is bound to succeed.",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const contents = [
     number: "04.",
     color: CardColors[3],
     title: "Engineering Partnership",
-    para: "We will help you with tailored fit Development Team which will help you scale your product.",
+    para: "We help you design, develop and scale your Product from MVP to PMF.",
   },
 ];
 
@@ -105,9 +105,9 @@ const Card = () => {
           Let&rsquo;s keep it simple.
         </p>
         <p className="text-lg sm:text-xl pt-4 font-normal">
-          We help you build your Minimum Viable Product or UX/UI
+          We help you build your Minimum Viable Product, UI/UX
           <br />
-          or with the further development of your product.
+          or do further development of your product.
         </p>
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
@@ -124,7 +124,7 @@ const Card = () => {
             })}
           </div>
         </div>
-        <p className="text-md sm:text-xl font-normal lg:-mt-10 text-gray-400">
+        {/* <p className="text-md sm:text-xl font-normal lg:-mt-10 text-gray-400">
           Or,
         </p>
         <p className="text-md sm:text-xl font-normal pt-4">
@@ -132,7 +132,7 @@ const Card = () => {
           <br />
           and you can call us your &rdquo;Design {"&"} Development
           Partner&rdquo;
-        </p>
+        </p> */}
       </section>
     </Fragment>
   );

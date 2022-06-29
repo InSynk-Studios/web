@@ -15,7 +15,7 @@ function Client() {
     <section className="my-40 text-white">
       <div className="max-w-screen-xl mx-auto">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-inter-400 font-semibold tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-inter-400 font-semibold tracking-tight">
             Our clients love us
           </h2>
         </div>

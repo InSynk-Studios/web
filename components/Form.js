@@ -76,7 +76,7 @@ function Form() {
     <Fragment>
       <section className="overflow-hidden relative font-inter-400" id="contact">
         <div className="container">
-          <div className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-end">
+          <div className="flex flex-col lg:flex-row lg:items-center text-gray-200 lg:justify-end">
             <div className="w-full lg:w-2/3 xl:w-6/12">
               <div className="relative lg:left-10 rounded-lg py-8 sm:p-12 shadow-lg">
                 <div className="max-w-xl mb-12 lg:mb-0">
@@ -84,7 +84,7 @@ function Form() {
                     Let&rsquo;s chat about your project
                   </h1>
                   <p className="text-lg md:text-xl pt-5 text-gray-400">
-                    You can reach us anytime via{" "}
+                    You can reach us anytime at{" "}
                     <span className="text-white">
                       support@insynkstudios.com
                     </span>
@@ -107,8 +107,8 @@ function Form() {
                       type="text"
                       placeholder="Your Name"
                       name="name"
-                      className={`${"w-full rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
-                      ${!formInputValidity.name && "dark:border-red-500"}`}
+                      className={`${"w-full rounded-lg p-3 text-gray-50 bg-transparent border-2 border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
+                      ${!formInputValidity.name && "border-red-500"}`}
                       ref={nameInputRef}
                       id="name"
                     />
@@ -127,8 +127,8 @@ function Form() {
                       id="email"
                       name="email"
                       ref={emailInputRef}
-                      className={`${"w-full rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
-                      ${!formInputValidity.email && "dark:border-red-500"}`}
+                      className={`${"w-full rounded-lg p-3 text-gray-50 bg-transparent border-2 border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
+                      ${!formInputValidity.email && "border-red-500"}`}
                       required
                     />
                   </div>
@@ -146,15 +146,15 @@ function Form() {
                       placeholder="Tell us a little about your project..."
                       id="message"
                       name="message"
-                      className={`${"w-full resize-none rounded-lg p-3 text-gray-800 dark:text-gray-50 bg-transparent border-2 border-gray-500  dark:border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
-                      ${!formInputValidity.message && "dark:border-red-500"}`}
+                      className={`${"w-full resize-none rounded-lg p-3 text-gray-50 bg-transparent border-2 border-grey-200 outline-none focus-visible:shadow-none focus:border-blue-200"}
+                      ${!formInputValidity.message && "border-red-500"}`}
                       ref={messageInputRef}
                     ></textarea>
                   </div>
                   <div>
                     <button
                       type="submit"
-                      className="w-full text-black hover:text-white bg-white rounded-lg border border-primary dark:border-white p-3 transition ease-in-out duration-200 hover:bg-transparent"
+                      className="w-full text-black hover:text-white bg-white rounded-lg border border-white p-3 transition ease-in-out duration-200 hover:bg-transparent"
                     >
                       Send Message
                     </button>

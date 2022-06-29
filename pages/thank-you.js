@@ -12,7 +12,7 @@ function ThankYou() {
       <Link href="/">
         <button
           type="submit"
-          className="flex items-center mt-10 text-black hover:text-white bg-white rounded-lg border border-primary dark:border-white p-3 transition ease-in-out duration-200 hover:bg-transparent"
+          className="flex items-center mt-10 text-black hover:text-white bg-white rounded-lg border dark:border-white p-3 transition ease-in-out duration-200 hover:bg-transparent"
         >
           Go to Previous page
         </button>
