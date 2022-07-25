@@ -25,7 +25,7 @@ export default function NavBar() {
 
   const menuItems = [
     { title: "Work", url: "#" },
-    { title: "Blog", url: "#" },
+    { title: "Blog", url: "/blog" },
     { title: "Why we Build!", url: "#" },
   ];
 
@@ -41,16 +41,14 @@ export default function NavBar() {
             animateHeader ? "py-5" : "py-10"
           } mx-auto items-center justify-between px-8 sm:px-8 md:px-8 lg:px-0 xl:px-0 trasition ease-in-out duration-500`}
         >
-          <Link
-            href="/"
-            className="text-xl font-bold tracking-tighter text-indigo-400 cursor-pointer"
-          >
-            <div className="flex w-32 lg:w-56 relative">
+          <Link href="/">
+            {/* change lg:w-56 -> lg:w-40 to remove unwanted padding */}
+            <div className="flex w-32 lg:w-40 cursor-pointer relative">
               <Image src={logo} alt="insynk-logo" />
             </div>
           </Link>
           {/* TODO: Uncomment as we add more pages to the site */}
-          {/* <nav>
+          <nav>
             <ul className="flex items-center justify-start">
               {menuItems?.map((item) => (
                 <li key={item?.title}>
@@ -62,7 +60,7 @@ export default function NavBar() {
                 </li>
               ))}
             </ul>
-          </nav> */}
+          </nav>
         </div>
       </div>
     </header>
