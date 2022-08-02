@@ -26,7 +26,7 @@ export default function NavBar() {
   const menuItems = [
     { title: "Work", url: "#" },
     { title: "Blog", url: "/blog" },
-    { title: "Why we Build!", url: "#" },
+    { title: "Why we Build!", url: "/why-we-build" },
   ];
 
   return (
