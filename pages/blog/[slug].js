@@ -13,7 +13,7 @@ const components = { SyntaxHighlighter };
 const PostPage = ({ frontMatter: { title, date }, mdxSource }) => {
   return (
     <BlogLayout>
-        {/* Rendering markdown from "posts" folder */}
+      {/* Rendering markdown from "posts" folder */}
       <div className="prose prose-sm lg:prose-base prose-h3:text-purple-600 prose-invert">
         <h1 className="opacity-75 text-teal-400 ">{title}</h1>
         <h6>{date}</h6>

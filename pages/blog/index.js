@@ -8,7 +8,7 @@ import matter from "gray-matter";
 export default function blog({ posts }) {
   return (
     <Fragment>
-    <div className="flex flex-col text-white items-center justify-center h-screen">
+      <div className="flex flex-col text-white items-center justify-center h-screen">
         <div className="container mx-auto xl:max-w-screen-lg">
           <section>
             <div className="text-4xl lg:text-5xl sm:text-left md:text-left lg:text-left xl:text-left selection:bg-teal-300 selection:text-fuchsia-900">

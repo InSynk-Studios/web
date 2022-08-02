@@ -9,4 +9,4 @@ const BlogLayout = (props) => {
 };
 
 export default BlogLayout;
-// This is component is for responsive blog
+// This component is for responsive blog
