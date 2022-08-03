@@ -20,7 +20,8 @@ const contents = [
     number: "01.",
     color: CardColors[0],
     title: "Product Scoping",
-    para: "We help you brainstorm user stories and feature sets required for your MVP.",
+    discription:
+      "We help you brainstorm user stories and feature sets required for your MVP.",
   },
   {
     id: 2,
@@ -28,7 +29,8 @@ const contents = [
     number: "02.",
     color: CardColors[1],
     title: "UI/UX",
-    para: "We help you with creating the best design and user experience for your product.",
+    discription:
+      "We help you with creating the best design and user experience for your product.",
   },
   {
     id: 3,
@@ -36,7 +38,8 @@ const contents = [
     number: "03.",
     color: CardColors[2],
     title: "MVP Development",
-    para: "We help you design, develop and launch a scalable MVP that is bound to succeed.",
+    discription:
+      "We help you design, develop and launch a scalable MVP that is bound to succeed.",
   },
   {
     id: 4,
@@ -44,7 +47,8 @@ const contents = [
     number: "04.",
     color: CardColors[3],
     title: "Development Partnership",
-    para: "We help you design, develop and scale your Product from MVP to PMF.",
+    discription:
+      "We help you design, develop and scale your Product from MVP to PMF.",
   },
 ];
 
@@ -65,7 +69,7 @@ const CardListItem = (props) => {
           <Image src={props.content.svg} alt={props.content.title} />
         </div>
       </div>
-      <div className="">
+      <div>
         <div className="transform translate-y-24 lg:translate-y-40 group-hover:translate-y-5 lg:group-hover:translate-y-16 duration-500">
           <p className="text-xl">{props.content.number}</p>
           <p className="text-xl lg:text-3xl font-semibold pr-3">
@@ -83,7 +87,7 @@ const CardListItem = (props) => {
                 <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
               </div>
               <p className="pt-2 lg:pt-5 text-sm lg:text-base leading-1">
-                {props.content.para}
+                {props.content.discription}
               </p>
             </div>
           </div>

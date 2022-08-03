@@ -1,6 +1,7 @@
 ---
 title: "This is second dummy blog"
 date: "26-7-2022"
+description: "a group of people talking about something that they have not achieved as something that they cannot ever achieve. This was a total bummer for me because I had achieved that thing and I knew it was possible."
 ---
 
 <div>
