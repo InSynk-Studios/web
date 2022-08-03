@@ -9,13 +9,13 @@ export default function build({ posts }) {
     <section className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl">
       <div className="mt-24 text-4xl lg:text-5xl sm:text-left md:text-left lg:text-left xl:text-left">
         <h1 className="max-w-xl lg:max-w-7xl mx-auto py-10 px-4 sm:py-12 text-purple-500">
-          Why we build !
+          Our Work
         </h1>
       </div>
 
       <div className="space-y-10">
         {posts.map((post, index) => (
-          <Link href={"/why-we-build/" + post.slug} passHref key={index}>
+          <Link href={"/work/" + post.slug} passHref key={index}>
             <div className="relative flex flex-col md:flex-row md:space-x-5 rounded-xl shadow-lg p-3 max-w-lg md:max-w-3xl mx-auto cursor-pointer border border-gray-900 bg-gray-900">
               <div className="w-full md:w-2/6 grid place-items-center">
                 <img

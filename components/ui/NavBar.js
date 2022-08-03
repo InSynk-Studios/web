@@ -24,9 +24,9 @@ export default function NavBar() {
   }, []);
 
   const menuItems = [
-    { title: "Work", url: "#" },
+    { title: "Work", url: "/work" },
     { title: "Blog", url: "/blog" },
-    { title: "Why we Build!", url: "/why-we-build" },
+    { title: "Why we Build!", url: "#" },
   ];
 
   return (
