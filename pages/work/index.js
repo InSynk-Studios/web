@@ -1,4 +1,4 @@
-// insynkstudios.com/why-we-build/
+// insynkstudios.com/work/
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
