@@ -84,29 +84,22 @@ function Form() {
             <div className="float-left lg:absolute bottom-11 text-white text-xl">
               Reach us out at :
               <br />
-              <a
-                href="aman@insynkstudios.com"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:underline text-violet-500"
-              >
+              <p className="hover:underline cursor-pointer text-violet-500">
                 aman@insynkstudios.com
-              </a>
-              <br />
-              <a
-                href="vishnu@insynkstudios.com"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:underline text-violet-500"
-              >
+              </p>
+              <p className="hover:underline cursor-pointer text-violet-500">
                 vishnu@insynkstudios.com
-              </a>
+              </p>
               <p className="py-6">
                 Call us at :
                 <br />
-                <span className="text-violet-500">+91 86965 65066</span>
+                <span className="hover:underline cursor-pointer text-violet-500">
+                  +91 86965 65066
+                </span>
                 <br />
-                <span className="text-violet-500">+91 8009342234</span>
+                <span className="hover:underline cursor-pointer text-violet-500">
+                  +91 8009342234
+                </span>
               </p>
               <p>
                 Our socials :
