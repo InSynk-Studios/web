@@ -9,7 +9,7 @@ export default function Home() {
     <Background>
       <Hero />
         <Card />
-        <Client />
+        {/* <Client /> */}
         <Form />
       {/* <div className="">
       </div> */}
