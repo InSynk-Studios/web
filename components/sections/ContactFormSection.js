@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 const isEmpty = (value) => value.trim() === "";
 
-function Form() {
+function ContactFormSection() {
   const router = useRouter();
   const [didSubmit, setDidSubmit] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -170,4 +170,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default ContactFormSection;

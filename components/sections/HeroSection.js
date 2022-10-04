@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import abstractEllipse from "../assets/abstract/ellipse.svg";
+import abstractEllipse from "../../assets/abstract/ellipse.svg";
 import Image from "next/image";
 
-function Hero() {
+function HeroSection() {
   return (
     <Fragment>
       <section className="relative my-60 lg:my-80">
@@ -30,4 +30,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default HeroSection;

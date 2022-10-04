@@ -1,7 +1,7 @@
-import ClientRow from "./client/ClientRow";
-import onChainLogo from "../assets/clients/onchain.png";
+import ClientRow from "../ClientRow";
+import onChainLogo from "../../assets/clients/onchain.png";
 
-function Client() {
+function ClientSection() {
   const clients = [
     {
       id: 1,
@@ -26,4 +26,4 @@ function Client() {
   );
 }
 
-export default Client;
+export default ClientSection;

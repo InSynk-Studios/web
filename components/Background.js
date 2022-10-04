@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Fragment, useEffect } from "react";
-import abstractPattern from "../../assets/abstract/pattern-1.svg";
-import abstractEllipseCut from "../../assets/abstract/ellipse-cut.svg";
+import abstractPattern from "../assets/abstract/pattern-1.svg";
+import abstractEllipseCut from "../assets/abstract/ellipse-cut.svg";
 
 function Background(props) {
   return (

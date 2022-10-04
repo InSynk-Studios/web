@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import scoping from "../assets/scoping.svg";
-import engineering from "../assets/engineering.svg";
-import mvp from "../assets/mvp.svg";
-import ux from "../assets/ux.svg";
+import scoping from "../../assets/scoping.svg";
+import engineering from "../../assets/engineering.svg";
+import mvp from "../../assets/mvp.svg";
+import ux from "../../assets/ux.svg";
 import Image from "next/image";
 
 // Card background colors
@@ -97,7 +97,7 @@ const CardListItem = (props) => {
   );
 };
 
-const Card = () => {
+const ServicesSection = () => {
   return (
     <Fragment>
       <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
@@ -142,4 +142,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default ServicesSection;

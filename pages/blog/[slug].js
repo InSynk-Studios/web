@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import BlogLayout from "../../components/ui/BLogLayout";
+import BlogLayout from "../../components/layouts/BlogLayout";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
 const components = { SyntaxHighlighter };

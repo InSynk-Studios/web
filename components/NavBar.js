@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import logo from "../../assets/logo.svg";
+import logo from "../assets/logo.svg";
 
 export default function NavBar() {
   const [animateHeader, setAnimateHeader] = useState(false);
@@ -28,57 +28,56 @@ export default function NavBar() {
     { title: "Blog", url: "/blog" },
     { title: "Why we Build!", url: "#" },
   ];
-  if (typeof window !== "undefined") {
-    var mobileMenuButton = document.getElementById("mobileMenuButton");
-    mobileMenuButton.onclick = function () {
-      document
-        .getElementById("sideMenuHideOnMobile")
-        .classList.toggle("-translate-y-full");
-      document.getElementById("sideMenuHideOnMobile").classList.toggle("mt-20");
-      document
-        .getElementById("sideMenuHideOnMobile")
-        .classList.toggle("shadow");
-      document
-        .getElementById("mobileMenuButtonClose")
-        .classList.toggle("hidden");
-      document
-        .getElementById("mobileMenuButtonOpen")
-        .classList.toggle("hidden");
-    };
-    // Hide element when click outside nav
-    var theElementContainer = document.getElementsByTagName("nav")[0];
-    document.addEventListener("click", function (event) {
-      if (!theElementContainer.contains(event.target)) {
-        document
-          .getElementById("sideMenuHideOnMobile")
-          .classList.add("-translate-y-full");
-        document
-          .getElementById("sideMenuHideOnMobile")
-          .classList.remove("mt-20");
-        document
-          .getElementById("sideMenuHideOnMobile")
-          .classList.remove("shadow");
-        document
-          .getElementById("mobileMenuButtonOpen")
-          .classList.remove("hidden");
-        document
-          .getElementById("mobileMenuButtonClose")
-          .classList.add("hidden");
-      }
-    });
-  }
+
+  // if (typeof window !== "undefined") {
+  //   var mobileMenuButton = document.getElementById("mobileMenuButton");
+  //   mobileMenuButton.onclick = function () {
+  //     document
+  //       .getElementById("sideMenuHideOnMobile")
+  //       .classList.toggle("-translate-y-full");
+  //     document.getElementById("sideMenuHideOnMobile").classList.toggle("mt-20");
+  //     document
+  //       .getElementById("sideMenuHideOnMobile")
+  //       .classList.toggle("shadow");
+  //     document
+  //       .getElementById("mobileMenuButtonClose")
+  //       .classList.toggle("hidden");
+  //     document
+  //       .getElementById("mobileMenuButtonOpen")
+  //       .classList.toggle("hidden");
+  //   };
+  //   // Hide element when click outside nav
+  //   var theElementContainer = document.getElementsByTagName("nav")[0];
+  //   document.addEventListener("click", function (event) {
+  //     if (!theElementContainer.contains(event.target)) {
+  //       document
+  //         .getElementById("sideMenuHideOnMobile")
+  //         .classList.add("-translate-y-full");
+  //       document
+  //         .getElementById("sideMenuHideOnMobile")
+  //         .classList.remove("mt-20");
+  //       document
+  //         .getElementById("sideMenuHideOnMobile")
+  //         .classList.remove("shadow");
+  //       document
+  //         .getElementById("mobileMenuButtonOpen")
+  //         .classList.remove("hidden");
+  //       document
+  //         .getElementById("mobileMenuButtonClose")
+  //         .classList.add("hidden");
+  //     }
+  //   });
+  // }
 
   return (
     <header
-      className={`w-full top-0 backdrop-filter backdrop-blur-lg fixed z-10 trasition ease-in-out duration-500 ${
-        animateHeader && "bg-black/30"
+      className={`w-full top-0 fixed z-10 transition-opacity ease-in-out duration-500 ${
+        animateHeader ? "bg-black bg-opacity-80" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto">
         <div
-          className={`flex max-w-screen-xl ${
-            animateHeader ? "py-5" : "py-10"
-          } mx-auto items-center justify-between px-8 sm:px-8 md:px-8 lg:px-0 xl:px-0 trasition ease-in-out duration-500`}
+          className={`flex max-w-screen-xl py-7 mx-auto items-center justify-between px-8 sm:px-8 md:px-8 lg:px-0 xl:px-0 trasition ease-in-out duration-500`}
         >
           <Link href="/">
             {/* change lg:w-56 -> lg:w-40 to remove unwanted padding */}
@@ -125,7 +124,7 @@ export default function NavBar() {
                 />
               </svg>
             </button>
-            <div
+            {/* <div
               id="sideMenuHideOnMobile"
               className="flex px-12 lg:px-0 lg:flex-none items-center lg:mx-24 bg-white space-y-4 py-4 md:space-y-0 md:py-0 lg:py-0 lg:space-y-0 md:bg-transparent lg:bg-transparent rounded-lg absolute top-0 right-8 transition-all duration-500 transform translate-x-0 flex-col md:flex-row -translate-y-full md:translate-y-0 md:my-12 lg:my-12 md:items-center md:uppercase"
             >
@@ -141,7 +140,7 @@ export default function NavBar() {
                   </Link>
                 </ul>
               ))}
-            </div>
+            </div> */}
           </nav>
         </div>
       </div>

@@ -1,18 +1,16 @@
-import Card from "../components/Card";
-import Client from "../components/Client";
-import Form from "../components/Form";
-import Hero from "../components/Hero";
-import Background from "../components/ui/Background";
+import ServicesSection from "../components/sections/ServicesSection";
+import ClientSection from "../components/sections/ClientSection";
+import ContactFormSection from "../components/sections/ContactFormSection";
+import HeroSection from "../components/sections/HeroSection";
+import Background from "../components/Background";
 
 export default function Home() {
   return (
     <Background>
-      <Hero />
-        <Card />
-        <Client />
-        <Form />
-      {/* <div className="">
-      </div> */}
+      <HeroSection />
+      <ServicesSection />
+      <ClientSection />
+      <ContactFormSection />
     </Background>
   );
 }
