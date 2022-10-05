@@ -1,65 +1,62 @@
 export default function UxCard() {
   return (
-    <section className="container px-6 py-4 mx-auto">
-      <div className="grid gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4 justify-center">
-        {/* <!-- Card 1 --> */}
-        <div className="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
-          <div className="p-3 mr-4 bg-blue-500 text-white rounded-full">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"
-              ></path>
-            </svg>
-          </div>
-          <div>
-            <p className="mb-2 text-sm font-medium text-white">Projects</p>
-            <p className="text-sm font-normal text-white">
-              Unlimted projects for you
-            </p>
-          </div>
+    <div className="py-16 backdrop-filter backdrop-blur-lg overflow-hidden">
+      <div className="container m-auto px-6 space-y-8 text-white md:px-12">
+        <div>
+          <h2 className="mt-4 text-4xl text-white font-bold md:text-6xl">
+            Key benefits✨
+          </h2>
         </div>
+        <div className="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-2 xl:grid-cols-2">
+          <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+            <div className="relative p-8 space-y-8">
+              <img
+                src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/package-delivery.png"
+                class="w-10"
+                width="512"
+                height="512"
+                alt="burger illustration"
+              />
 
-        {/* <!-- Card 2 --> */}
-        <div className="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
-          <div className="p-3 mr-4 bg-blue-500 text-white rounded-full">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
-              ></path>
-            </svg>
+              <div className="space-y-2">
+                <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-blue-600">
+                  First benefit
+                </h5>
+                <p className="text-sm text-gray-600">
+                  Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                  nostrum. Neque Dolor, fugiat non cum doloribus aperiam
+                  voluptates nostrum. Neque Dolor, fugiat non cum doloribus
+                  aperiam voluptates nostrum.
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <p className="mb-2 text-sm font-medium text-white">Analytics</p>
-            <p className="text-sm font-normal text-white">
-              User and customer analytics
-            </p>
+          <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+            <div className="relative p-8 space-y-8">
+              <img
+                src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/trowel.png"
+                className="w-10"
+                width="512"
+                height="512"
+                alt="burger illustration"
+              />
+
+              <div className="space-y-2">
+                <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-blue-600">
+                  Second benefit
+                </h5>
+                <p className="text-sm text-gray-600">
+                  Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                  nostrum. Neque Dolor, fugiat non cum doloribus aperiam
+                  voluptates nostrum. Neque Dolor, fugiat non cum doloribus
+                  aperiam voluptates nostrum. Neque Dolor, fugiat non cum
+                  doloribus aperiam voluptates nostrum.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

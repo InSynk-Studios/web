@@ -1,14 +1,33 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
+
+const useMediaQuery = (width) => {
+  const [isMobile, setIsMobile] = useState();
+
+  const MobileView = useCallback((e) => {
+    if (e.matches) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: ${width}px)`);
+    media.addListener(MobileView);
+
+    // Check on mount (callback is not called until a change occurs)
+    if (media.matches) {
+      setIsMobile(true);
+    }
+
+    return () => media.removeListener(MobileView);
+  }, [MobileView, width]);
+
+  return isMobile;
+};
 
 export default function UxTimeline() {
-// const [isMobile, setIsMobile] = useState();
-
-// const handleScreenSize = () => {
-//   if (window.scrollY > 140) {
-//     setIsMobile(true);
-//   } else setIsMobile(false);
-// };
-
+  const isBreakpoint = useMediaQuery(768);
   return (
     <div className="container">
       <div className="max-w-7xl mx-auto px-8 sm:px-8 md:px-8 lg:px-0 xl:px-0 text-white">
@@ -29,7 +48,11 @@ export default function UxTimeline() {
           <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
             <div className="h-full w-6 flex items-center justify-center">
               <div className="h-full w-1 bg-gray-400 pointer-events-none" />
-              <div className="w-20 h-1 bg-blue-500 absolute -left-20 z-0" />
+              <div
+                className={`h-1 bg-blue-500 absolute z-0 ${
+                  isBreakpoint ? "-right-10 w-10" : "-left-16 w-16"
+                }`}
+              />
             </div>
             <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gray-500 shadow" />
           </div>
@@ -39,7 +62,11 @@ export default function UxTimeline() {
           <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
             <div className="h-full w-6 flex items-center justify-center">
               <div className="h-full w-1 bg-gray-400 pointer-events-none" />
-              <div className="w-20 h-1 bg-blue-500 absolute -right-20 z-0" />
+              <div
+                className={`h-1 bg-blue-500 absolute z-0 ${
+                  isBreakpoint ? "-right-10 w-10" : "-right-16 w-16"
+                }`}
+              />
             </div>
             <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gray-500 shadow" />
           </div>
@@ -63,7 +90,11 @@ export default function UxTimeline() {
           <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
             <div className="h-full w-6 flex items-center justify-center">
               <div className="h-full w-1 bg-gray-400 pointer-events-none" />
-              <div className="w-20 h-1 bg-blue-500 absolute -left-20 z-0" />
+              <div
+                className={`h-1 bg-blue-500 absolute z-0 ${
+                  isBreakpoint ? "-right-10 w-10" : "-left-16 w-16"
+                }`}
+              />
             </div>
             <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-gray-500 shadow" />
           </div>
