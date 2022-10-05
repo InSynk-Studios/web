@@ -1,9 +1,10 @@
 import { Fragment } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import scoping from "../assets/scoping.svg";
 import engineering from "../assets/engineering.svg";
 import mvp from "../assets/mvp.svg";
 import ux from "../assets/ux.svg";
-import Image from "next/image";
 
 // Card background colors
 const CardColors = [
@@ -20,7 +21,9 @@ const contents = [
     number: "01.",
     color: CardColors[0],
     title: "Product Scoping",
-    para: "We help you brainstorm user stories and feature sets required for your MVP.",
+    url: "/thank-you",
+    description:
+      "We help you brainstorm user stories and feature sets required for your MVP.",
   },
   {
     id: 2,
@@ -28,7 +31,9 @@ const contents = [
     number: "02.",
     color: CardColors[1],
     title: "UI/UX",
-    para: "We help you with creating the best design and user experience for your product.",
+    url: "/service-ui-ux",
+    description:
+      "We help you with creating the best design and user experience for your product.",
   },
   {
     id: 3,
@@ -36,7 +41,8 @@ const contents = [
     number: "03.",
     color: CardColors[2],
     title: "MVP Development",
-    para: "We help you design, develop and launch a scalable MVP that is bound to succeed.",
+    description:
+      "We help you design, develop and launch a scalable MVP that is bound to succeed.",
   },
   {
     id: 4,
@@ -44,28 +50,28 @@ const contents = [
     number: "04.",
     color: CardColors[3],
     title: "Development Partnership",
-    para: "We help you design, develop and scale your Product from MVP to PMF.",
+    description:
+      "We help you design, develop and scale your Product from MVP to PMF.",
   },
 ];
 
 const CardListItem = (props) => {
-  const scrollToContact = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  };
+  // const router = useRouter();
+
+  // const CardLink = () => {
+  //   router.push(props.content.link);
+  // };
 
   return (
     <div
-      className={` relative transition-all h-80 mx-0 lg:h-6/6 rounded-3xl text-black group p-8 ${props.content.color}`}
+      className={`relative transition-all h-80 mx-0 lg:h-6/6 rounded-3xl text-black group p-8 ${props.content.color}`}
     >
       <div className="w-fit mb-10 lg:mb-20">
         <div className="inline-block w-10 h-10 lg:w-14 lg:h-14 relative">
           <Image src={props.content.svg} alt={props.content.title} />
         </div>
       </div>
-      <div className="">
+      <div>
         <div className="transform translate-y-24 lg:translate-y-40 group-hover:translate-y-5 lg:group-hover:translate-y-16 duration-500">
           <p className="text-xl">{props.content.number}</p>
           <p className="text-xl lg:text-3xl font-semibold pr-3">
@@ -76,14 +82,17 @@ const CardListItem = (props) => {
         <div className="transform translate-y-16 lg:translate-y-32 opacity-0 group-hover:opacity-100 group-hover:translate-y-6 lg:group-hover:translate-y-16 duration-500">
           <div className="mt-2 lg:mt-5">
             <div className="divide-y-2 divide-black">
-              <div
-                onClick={scrollToContact}
-                className="flex float-right -mt-16 h-10 w-10 lg:h-12 lg:w-12 cursor-pointer"
-              >
-                <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
+              <div className="flex float-right -mt-16 h-10 w-10 lg:h-12 lg:w-12 cursor-pointer">
+                <Link
+                  href={{
+                    pathname: props.content.url,
+                  }}
+                >
+                  <img src="https://img.icons8.com/ios/50/undefined/circled-right-2.png" />
+                </Link>
               </div>
               <p className="pt-2 lg:pt-5 text-sm lg:text-base leading-1">
-                {props.content.para}
+                {props.content.description}
               </p>
             </div>
           </div>
@@ -95,36 +104,35 @@ const CardListItem = (props) => {
 
 const Card = () => {
   return (
-    <Fragment>
-      <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
-        <h1 className="text-4xl md:text-6xl font-semibold">
-          See how can we help you
-        </h1>
+    <section className="my-40 font-inter-400 -mt-32 lg:-mt-0 text-white">
+      <h1 className="text-4xl md:text-6xl font-semibold">
+        See how can we help you
+      </h1>
+      <br />
+      <p className="text-lg sm:text-xl font-normal text-gray-400">
+        Let&rsquo;s keep it simple.
+      </p>
+      <p className="text-lg sm:text-xl pt-4 font-normal">
+        We help you build your Minimum Viable Product, UI/UX
         <br />
-        <p className="text-lg sm:text-xl font-normal text-gray-400">
-          Let&rsquo;s keep it simple.
-        </p>
-        <p className="text-lg sm:text-xl pt-4 font-normal">
-          We help you build your Minimum Viable Product, UI/UX
-          <br />
-          or do further development of your product.
-        </p>
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
-            {contents.map((content) => {
-              return (
-                <div key={content.id}>
-                  <div>
-                    <a className="flex justify-center">
-                      <CardListItem content={content} />
-                    </a>
-                  </div>
+        or do further development of your product.
+      </p>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 pt-20 pb-10 lg:pt-22 lg:pb-20">
+          {contents.map((content) => {
+            return (
+              <div key={content.id}>
+                <div>
+                  <a className="flex justify-center">
+                    <CardListItem content={content} />
+                  </a>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
-        {/* <p className="text-md sm:text-xl font-normal lg:-mt-10 text-gray-400">
+      </div>
+      {/* <p className="text-md sm:text-xl font-normal lg:-mt-10 text-gray-400">
           Or,
         </p>
         <p className="text-md sm:text-xl font-normal pt-4">
@@ -133,8 +141,7 @@ const Card = () => {
           and you can call us your &rdquo;Design {"&"} Development
           Partner&rdquo;
         </p> */}
-      </section>
-    </Fragment>
+    </section>
   );
 };
 
