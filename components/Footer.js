@@ -12,12 +12,15 @@ export default function Footer() {
       <div className="max-w-screen-xl px-4 pt-8 mx-auto sm:px-6 lg:px-8 sm:flex sm:items-center sm:justify-between">
         <Image src={Logo} alt="" />
 
-        <p className="mt-4 font-inter-500 font-medium leading-7 text-lg md:text-xl text-center lg:w-96 text-[#E2E2E2] lg:text-left lg:mt-0">
-          GETINSYNK TECH PRIVATE LIMITED SOLUS Building, Office No. 1913 Thane
-          400607, Maharashtra
-          <br />
-          CIN: U72900MH2022PTC37695
-        </p>
+        <span className="flex flex-col">
+          <p className="mt-4 font-inter-500 font-medium leading-7 text-lg md:text-xl text-center lg:w-96 text-[#E2E2E2] lg:text-left lg:mt-0">
+            GETINSYNK TECH PRIVATE LIMITED SOLUS Building, Office No. 1913 Thane
+            400607, Maharashtra
+          </p>
+          <p className="font-inter-500 font-medium text-lg md:text-xl text-center text-white lg:text-left lg:mt-0">
+            CIN: U72900MH2022PTC37695
+          </p>
+        </span>
       </div>
     </footer>
   );
