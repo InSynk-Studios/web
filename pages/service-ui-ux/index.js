@@ -3,6 +3,7 @@
 import UxTimeline from "../../components/UxTimeline";
 import Background from "../../components/ui/Background";
 import UxCard from "../../components/UxCard";
+import UxDeliver from "../../components/UxDeliver";
 
 export default function UI() {
   return (
@@ -24,6 +25,9 @@ export default function UI() {
         </div>
         <div className="relative mt-40">
           <UxCard />
+        </div>
+        <div className="relative mt-40">
+          <UxDeliver />
         </div>
       </section>
     </Background>

@@ -12,12 +12,11 @@ export default function UxCard() {
             <div className="relative p-8 space-y-8">
               <img
                 src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/package-delivery.png"
-                class="w-10"
+                className="w-10"
                 width="512"
                 height="512"
-                alt="burger illustration"
+                alt="illustration"
               />
-
               <div className="space-y-2">
                 <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-blue-600">
                   First benefit
@@ -31,6 +30,7 @@ export default function UxCard() {
               </div>
             </div>
           </div>
+
           <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
             <div className="relative p-8 space-y-8">
               <img
@@ -38,9 +38,8 @@ export default function UxCard() {
                 className="w-10"
                 width="512"
                 height="512"
-                alt="burger illustration"
+                alt="illustration"
               />
-
               <div className="space-y-2">
                 <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-blue-600">
                   Second benefit
