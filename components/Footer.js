@@ -9,13 +9,16 @@ import Logo from "../assets/logo.svg";
 export default function Footer() {
   return (
     <footer className="pb-7 mt-12 border-t border-t-[#6C6C6C] border-solid">
-      <div className="max-w-screen-xl px-4 pt-8 mx-auto sm:px-6 lg:px-8 sm:flex sm:items-center sm:justify-between">
-        <Image src={Logo} alt="" />
+      <div className="max-w-screen-xl px-4 pt-8 mx-auto sm:px-6 lg:px-8 sm:flex sm:items-start sm:justify-between">
+        <div className="text-center">
+          <Image src={Logo} alt="" />
+        </div>
 
-        <p className="mt-4 font-inter-500 font-medium leading-7 text-lg md:text-xl text-center lg:w-96 text-[#E2E2E2] lg:text-left lg:mt-0">
+        <span className="mt-4 font-inter-500 leading-7 text-lg md:text-xl text-center sm:w-96 text-[#E2E2E2] sm:text-left sm:mt-0">
           GETINSYNK TECH PRIVATE LIMITED SOLUS Building, Office No. 1913 Thane
-          400607, Maharashtra CIN: U72900MH2022PTC37695
-        </p>
+          400607, Maharashtra
+          <span className="block mt-4 text-white">CIN: U72900MH2022PTC37695</span>
+        </span>
       </div>
     </footer>
   );
