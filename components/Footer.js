@@ -14,11 +14,11 @@ export default function Footer() {
           <Image src={Logo} alt="" />
         </div>
 
-        <span className="mt-4 font-inter-500 leading-7 text-lg md:text-xl text-center sm:w-96 text-[#E2E2E2] sm:text-left sm:mt-0">
-          GETINSYNK TECH PRIVATE LIMITED SOLUS Building, Office No. 1913 Thane
-          400607, Maharashtra
+        <p className="mt-4 font-inter-500 leading-7 text-lg md:text-xl text-center sm:w-96 text-[#E2E2E2] sm:text-left sm:mt-0">
+          GETINSYNK TECH PRIVATE LIMITED SOLUS Building, Office No. 1913 <br />
+          Thane 400607, Maharashtra
           <span className="block mt-4 text-white">CIN: U72900MH2022PTC37695</span>
-        </span>
+        </p>
       </div>
     </footer>
   );
