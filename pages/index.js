@@ -10,7 +10,7 @@ export default function Home() {
     <Background>
       <Hero />
       <Card />
-      <Client />
+      {/* <Client /> */}
       <Form />
       <Footer />
       {/* <div className="">
